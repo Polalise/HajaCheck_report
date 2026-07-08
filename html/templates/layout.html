@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hajaCheck 착수보고 - {{ title | default('슬라이드') }}</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  {% block styles %}{% endblock %}
+</style>
+</head>
+<body>
+<div class="slide">
+  {% if show_brand | default(true) %}
+  <div class="brand">haja<span>Check</span></div>
+  {% endif %}
+
+  {% block content %}{% endblock %}
+
+  {% if show_footer | default(true) %}
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">{{ page_num }}</div>
+  {% endif %}
+</div>
+</body>
+</html>

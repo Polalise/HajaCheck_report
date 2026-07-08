@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hajaCheck 착수보고 - 검증 및 마무리</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  
+  .cols {
+    position: absolute;
+    top: 190px;
+    left: 90px;
+    width: 1740px;
+    display: flex;
+    gap: 28px;
+    height: 560px;
+  }
+  .col { flex: 1; padding: 34px 32px; display: flex; flex-direction: column; }
+  .col .idx {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--blue); color: #fff; font-weight: 800; font-size: 20px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .col .title { font-size: 25px; font-weight: 800; margin-bottom: 16px; color: var(--ink); }
+  .col ul { list-style: none; font-size: 18px; color: var(--sub); line-height: 1.85; }
+  .col ul li:before { content: "· "; }
+  .col ul li b { color: var(--ink); }
+
+  .badges {
+    position: absolute;
+    top: 790px;
+    left: 90px;
+    width: 1740px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .badges .label { font-size: 20px; font-weight: 700; color: var(--sub); margin-right: 10px; }
+  .qna {
+    position: absolute;
+    bottom: 34px;
+    right: 90px;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--blue);
+  }
+
+</style>
+</head>
+<body>
+<div class="slide">
+  
+  <div class="brand">haja<span>Check</span></div>
+  
+
+  
+  <div class="chapter-num">06</div>
+  <div class="slide-title">검증 및 마무리</div>
+
+  <div class="cols">
+    <div class="col card">
+      <div class="idx">1</div>
+      <div class="title">KPI</div>
+      <ul>
+        <li>균열 탐지 <b>mAP@0.5 ≥ 0.7</b></li>
+        <li>이미지 100장 → 보고서 <b>10분 이내</b></li>
+        <li>시연 시나리오 <b>무결점 완주</b></li>
+        <li>챗봇 답변 <b>출처 표기율 100%</b></li>
+      </ul>
+    </div>
+    <div class="col card">
+      <div class="idx">2</div>
+      <div class="title">최종 산출물</div>
+      <ul>
+        <li>요구사항·기능·정책 정의서</li>
+        <li>화면 설계서 / IA 트리</li>
+        <li>ERD · API 명세(OpenAPI)</li>
+        <li>PRD_hajaCheck (v0.41)</li>
+      </ul>
+    </div>
+    <div class="col card">
+      <div class="idx">3</div>
+      <div class="title">오픈 이슈 (팀 확정 필요)</div>
+      <ul>
+        <li>탐지 클래스 최종 범위</li>
+        <li>HF 계정 정책 / 예산 한도</li>
+        <li>심각도 등급 체계 (A~E 안)</li>
+        <li>상담원 역할 수행 주체</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="badges">
+    <span class="label">리스크 대응 키워드</span>
+    <span class="badge">데이터셋 확보</span>
+    <span class="badge">Contract-First(OpenAPI)</span>
+    <span class="badge">OAuth 사전 등록</span>
+  </div>
+
+  <div class="qna">Q&amp;A</div>
+
+
+  
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">8</div>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% set title = "목차" %}
+{% set show_brand = true %}
+{% set show_footer = true %}
+{% set page_num = 2 %}
+
+{% block styles %}
+  .toc-label {
+    position: absolute;
+    top: 88px;
+    left: 90px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: #98a2b3;
+  }
+  .grid {
+    position: absolute;
+    top: 200px;
+    left: 90px;
+    width: 1740px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 32px;
+    height: 740px;
+  }
+  .chapter {
+    padding: 40px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .chapter .num {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .chapter .title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .chapter .sub {
+    font-size: 22px;
+    color: var(--sub);
+    line-height: 1.5;
+  }
+{% endblock %}
+
+{% block content %}
+  <div class="toc-label">CONTENTS</div>
+
+  <div class="grid">
+    <div class="chapter card">
+      <div class="num">01</div>
+      <div class="title">프로젝트 소개</div>
+      <div class="sub">팀 소개 / 프로젝트 개요<br>추진 배경 및 목표 / 기대 효과</div>
+    </div>
+    <div class="chapter card">
+      <div class="num">02</div>
+      <div class="title">서비스 전략</div>
+      <div class="sub">타겟층 분석 및 MVP 범위<br>벤치마킹 및 핵심 차별점</div>
+    </div>
+    <div class="chapter card">
+      <div class="num">03</div>
+      <div class="title">수행 계획</div>
+      <div class="sub">역할 분담 및 협업 프로세스<br>일정 계획 및 리스크 대응</div>
+    </div>
+    <div class="chapter card">
+      <div class="num">04</div>
+      <div class="title">개발 환경 및 아키텍처</div>
+      <div class="sub">기술 스택 및 개발 환경<br>시스템 아키텍처 / AI 처리 흐름</div>
+    </div>
+    <div class="chapter card">
+      <div class="num">05</div>
+      <div class="title">서비스 설계</div>
+      <div class="sub">요구사항·기능·정책 정의서 / 메뉴 구조도<br>업무 흐름도 · 화면 설계 · API · ERD</div>
+    </div>
+    <div class="chapter card">
+      <div class="num">06</div>
+      <div class="title">검증 및 마무리</div>
+      <div class="sub">KPI 및 테스트 검증 계획<br>최종 산출물 / 오픈 이슈</div>
+    </div>
+  </div>
+{% endblock %}

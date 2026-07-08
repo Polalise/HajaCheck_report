@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% set title = "화면설계 목업" %}
+{% set show_brand = true %}
+{% set show_footer = true %}
+{% set page_num = 9 %}
+
+{% block styles %}
+  .subtitle {
+    position: absolute;
+    top: 160px;
+    left: 90px;
+    font-size: 24px;
+    color: var(--sub);
+  }
+  .screens {
+    position: absolute;
+    top: 240px;
+    left: 90px;
+    width: 1740px;
+    display: flex;
+    gap: 30px;
+    height: 700px;
+  }
+  .screen { flex: 1; padding: 26px; display: flex; flex-direction: column; }
+  .screen .name { font-size: 22px; font-weight: 800; margin-bottom: 16px; color: var(--ink); }
+  .mock { flex: 1; background: #f2f4f7; border: 1px dashed #c9cfda; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+
+  .bar { height: 26px; background: #dfe3ea; border-radius: 6px; }
+  .bar.short { width: 40%; }
+  .bar.blue { background: var(--blue); opacity: .85; }
+
+  .thumb-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; flex: 1; }
+  .thumb { background: #d7dee9; border-radius: 8px; position: relative; }
+  .thumb .box { position: absolute; border: 2px solid var(--red); border-radius: 4px; }
+  .thumb.c1 .box { top: 20%; left: 25%; width: 40%; height: 35%; }
+  .thumb.c2 .box { top: 40%; left: 15%; width: 50%; height: 30%; border-color: var(--amber); }
+
+  .kpi-row { display: flex; gap: 10px; }
+  .kpi { flex: 1; background: #e6effe; border-radius: 8px; height: 60px; }
+
+  .chart { flex: 1; background: #eef1f5; border-radius: 10px; position: relative; overflow: hidden; }
+  .chart .b { position: absolute; bottom: 0; width: 14%; background: var(--teal); border-radius: 3px 3px 0 0; }
+
+  .doc-lines { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .doc-line { height: 16px; background: #dfe3ea; border-radius: 4px; }
+  .doc-line.w80 { width: 80%; }
+  .doc-line.w60 { width: 60%; }
+  .doc-line.w95 { width: 95%; }
+{% endblock %}
+
+{% block content %}
+  <div class="chapter-num">추가</div>
+  <div class="slide-title">화면설계 목업 — 핵심 화면 3종</div>
+  <div class="subtitle">§5 서비스 설계 다이어그램류(와이어프레임) — 시연 임팩트가 큰 3개 화면만 선별</div>
+
+  <div class="screens">
+    <div class="screen card">
+      <div class="name">① 분석 결과 뷰어</div>
+      <div class="mock">
+        <div class="bar short"></div>
+        <div class="thumb-grid">
+          <div class="thumb c1"><div class="box"></div></div>
+          <div class="thumb c2"><div class="box"></div></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb c1"><div class="box"></div></div>
+          <div class="thumb"></div>
+        </div>
+        <div class="bar blue"></div>
+      </div>
+    </div>
+    <div class="screen card">
+      <div class="name">② 대시보드</div>
+      <div class="mock">
+        <div class="kpi-row">
+          <div class="kpi"></div><div class="kpi"></div><div class="kpi"></div>
+        </div>
+        <div class="chart">
+          <div class="b" style="left:5%;height:40%;"></div>
+          <div class="b" style="left:22%;height:65%;"></div>
+          <div class="b" style="left:39%;height:30%;"></div>
+          <div class="b" style="left:56%;height:80%;"></div>
+          <div class="b" style="left:73%;height:50%;"></div>
+        </div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div class="screen card">
+      <div class="name">③ 보고서</div>
+      <div class="mock">
+        <div class="bar short"></div>
+        <div class="doc-lines">
+          <div class="doc-line w95"></div>
+          <div class="doc-line w80"></div>
+          <div class="doc-line w60"></div>
+          <div class="doc-line w95"></div>
+          <div class="doc-line w80"></div>
+        </div>
+        <div class="bar blue"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

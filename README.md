@@ -20,17 +20,21 @@ html/            김관영 담당 슬라이드 HTML+CSS 원본 (1920x1080 고정
   slide-09-mockup.html     (신규) 화면설계 목업
   slide-10-ia-tree.html    (신규) IA 트리
 output/          렌더링된 PNG + 최종 pptx (kimkwanyoung_임시.pptx)
-build.py         output/*.png → pptx 조립 스크립트
+build.py         PPTX 조립 및 공용 PPTX 병합 스크립트
+capture.py       Playwright 기반 HTML 자동 캡처 스크립트 (Retina 고해상도 지원)
+build_all.py     통합 빌드 파이프라인 (캡처 + PPTX 조립/병합 일괄 처리)
 ```
 
-## 재빌드 절차 (html/ 내용 수정 후)
+## 재빌드 및 병합 절차 (html/ 내용 수정 후)
 
 1. `html/slide-*.html` 수정
-2. 로컬 서버 기동: `python -m http.server 8794` (html 폴더 안에서, `file://`는 브라우저에서 차단되어 반드시 HTTP 서버 경유)
-3. Playwright로 각 슬라이드를 1920x1080 뷰포트에서 스크린샷 → `output/슬라이드이름.png`로 저장(같은 파일명으로 덮어쓰면 됨)
-4. `python build.py` 실행 → `output/kimkwanyoung_임시.pptx` 갱신
+2. 통합 빌드 실행: `python build_all.py`
+   - 이 명령어 하나로 Playwright가 HTML 파일을 1920x1080 고해상도(Retina Scale)로 자동 캡처하여 `output/*.png`로 저장합니다.
+   - 캡처가 끝나면 `output/kimkwanyoung_임시.pptx`와 공용 PPTX 원안을 병합한 `output/hajaCheck착수보고_최종.pptx`를 일괄 생성합니다.
+   - *참고: 처음 실행하는 환경이라면 `playwright install chromium`을 먼저 수행해야 캡처가 가능할 수 있습니다.*
 
 ## 참고
 
-- html/ 폴더는 김관영 담당 슬라이드의 HTML→PPTX 임시 빌드본입니다 — 최종적으로 공용 `data/hajaCheck착수 보고.pptx`에 반영할 때는 이 산출물을 참고해 유병현 슬라이드와 합치는 단계가 별도로 필요합니다(병합 대상이 아니라 김관영 개인 작업용 임시본).
+- html/ 폴더는 김관영 담당 슬라이드의 HTML→PPTX 임시 빌드본입니다. `build_all.py`를 실행하면 유병현 담당 슬라이드가 유지된 채 김관영 담당본만 덮어씌워진 `output/hajaCheck착수보고_최종.pptx`가 자동으로 합성되므로 수동 병합이 불필요합니다.
 - `data/hajaCheck착수 보고.pptx`는 미리캔버스(miricanvas.com)에서 실제 편집 중인 공용 원본의 로컬 사본입니다. 미리캔버스에서 편집한 뒤에는 이 파일도 다운로드해 갱신·커밋해주세요.
+
