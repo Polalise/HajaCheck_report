@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% set title = "프로젝트 소개" %}
+{% set show_brand = true %}
+{% set show_footer = true %}
+{% set page_num = 3 %}
+
+{% block styles %}
+  .subtitle {
+    position: absolute;
+    top: 160px;
+    left: 90px;
+    font-size: 24px;
+    color: var(--sub);
+  }
+
+  .compare {
+    position: absolute;
+    top: 240px;
+    left: 90px;
+    width: 900px;
+    height: 380px;
+    display: flex;
+    gap: 24px;
+  }
+  .compare .col {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .compare .col.before { background: #fef3f2; border: 1px solid #fecdca; border-radius: 18px; }
+  .compare .col.after { background: #eff8ff; border: 1px solid #b2ddff; border-radius: 18px; }
+  .compare .tag { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+  .compare .col.before .tag { color: var(--red); }
+  .compare .col.after .tag { color: var(--blue); }
+  .compare .headline { font-size: 30px; font-weight: 800; margin-bottom: 18px; }
+  .compare ul { list-style: none; font-size: 19px; color: var(--sub); line-height: 1.9; }
+  .compare ul li:before { content: "· "; }
+  .arrow { align-self: center; font-size: 40px; color: #98a2b3; }
+
+  .stats {
+    position: absolute;
+    top: 240px;
+    left: 1040px;
+    width: 790px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stat-row { display: flex; gap: 20px; flex: 1; }
+  .stat { flex: 1; border-radius: 18px; padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+  .stat .num { font-size: 44px; font-weight: 900; color: var(--blue); }
+  .stat .label { font-size: 18px; color: var(--sub); margin-top: 6px; }
+
+  .callouts {
+    position: absolute;
+    top: 660px;
+    left: 90px;
+    width: 1740px;
+    display: flex;
+    gap: 30px;
+  }
+  .callout { flex: 1; padding: 30px 34px; }
+  .callout .badge { margin-bottom: 14px; }
+  .callout .text { font-size: 21px; font-weight: 600; line-height: 1.6; color: var(--ink); }
+{% endblock %}
+
+{% block content %}
+  <div class="chapter-num">01</div>
+  <div class="slide-title">프로젝트 소개</div>
+  <div class="subtitle">건물 외벽·교량 등 시설물 하자를 AI로 자동 탐지·보고하는 점검 지원 플랫폼</div>
+
+  <div class="compare">
+    <div class="col before card">
+      <div class="tag">BEFORE</div>
+      <div class="headline">사람이 직접 점검</div>
+      <ul>
+        <li>추락 위험 · 고비용 · 장시간 소요</li>
+        <li>점검자 숙련도에 따라 판독 편차</li>
+        <li>점검 이력이 체계적으로 축적 안 됨</li>
+      </ul>
+    </div>
+    <div class="arrow">→</div>
+    <div class="col after card">
+      <div class="tag">AFTER · hajaCheck</div>
+      <div class="headline">AI 자동 탐지</div>
+      <ul>
+        <li>이미지 업로드만으로 하자 자동 탐지</li>
+        <li>일관된 기준의 등급·보고서 생성</li>
+        <li>점검 이력 축적 · 회차 간 비교</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-row">
+      <div class="stat card">
+        <div class="num">8명</div>
+        <div class="label">팀 구성 (PM 1 · PL 1 · 팀원 6)</div>
+      </div>
+      <div class="stat card">
+        <div class="num">4주</div>
+        <div class="label">2026.07.09 ~ 08.07</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat card">
+        <div class="num">mAP 0.7↑</div>
+        <div class="label">균열 탐지 성능 목표 (§9 KPI)</div>
+      </div>
+      <div class="stat card">
+        <div class="num">10분</div>
+        <div class="label">이미지 100장 → 보고서 초안</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callouts">
+    <div class="callout card">
+      <div class="badge">문제 정의</div>
+      <div class="text">추락 위험 · 고비용 · 판독 편차 — 사람이 직접 점검하기 어려운 구조</div>
+    </div>
+    <div class="callout card">
+      <div class="badge">시장성 검증</div>
+      <div class="text">국내외 상용화 서비스 존재 (뷰메진 VODA, Inspekt AI 등) — 이미 검증된 시장</div>
+    </div>
+  </div>
+{% endblock %}

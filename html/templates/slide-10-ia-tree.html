@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% set title = "메뉴 구성 IA 트리" %}
+{% set show_brand = true %}
+{% set show_footer = true %}
+{% set page_num = 10 %}
+
+{% block styles %}
+  .subtitle {
+    position: absolute;
+    top: 160px;
+    left: 90px;
+    font-size: 24px;
+    color: var(--sub);
+  }
+  .tree {
+    position: absolute;
+    top: 240px;
+    left: 90px;
+    width: 1740px;
+    height: 720px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .node { padding: 22px 24px; }
+  .node .h { font-size: 21px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+  .node ul { list-style: none; font-size: 16px; color: var(--sub); line-height: 1.7; }
+  .node ul li:before { content: "· "; }
+  .p1 { color: var(--amber); font-weight: 700; }
+  .root { grid-column: 1 / 5; background: var(--navy); color: #fff; border-radius: 16px; padding: 20px 28px; font-size: 22px; font-weight: 800; text-align: center; }
+{% endblock %}
+
+{% block content %}
+  <div class="chapter-num">추가</div>
+  <div class="slide-title">메뉴 구성(IA) 트리 — P0 중심</div>
+  <div class="subtitle">§4 메뉴 구성(IA) 전체 트리 중 P0 핵심 흐름만 발췌</div>
+
+  <div class="tree">
+    <div class="root">hajaCheck (로그인 전: 랜딩 · 로그인/회원가입)</div>
+
+    <div class="node card">
+      <div class="h">📊 대시보드</div>
+      <ul>
+        <li>전체 시설물 현황</li>
+        <li>하자 등급 분포</li>
+        <li>처리 대기 현황</li>
+        <li class="p1">다음 점검일 도래 (P1)</li>
+      </ul>
+    </div>
+    <div class="node card">
+      <div class="h">🏢 시설물 관리</div>
+      <ul>
+        <li>시설물 목록/등록</li>
+        <li>시설물 상세·이력</li>
+        <li class="p1">점검 주기 설정 (P1)</li>
+        <li class="p1">지도 뷰 (P1)</li>
+      </ul>
+    </div>
+    <div class="node card">
+      <div class="h">🔍 점검 관리 ★</div>
+      <ul>
+        <li>점검(회차) 생성</li>
+        <li>촬영 데이터 업로드</li>
+        <li>AI 분석 실행/상태</li>
+        <li><b>분석 결과 뷰어</b> ★핵심</li>
+      </ul>
+    </div>
+    <div class="node card">
+      <div class="h">📋 하자 관리</div>
+      <ul>
+        <li>하자 목록/상세</li>
+        <li>상태머신: 신규→검수확정→조치대기→조치중→조치완료</li>
+        <li class="p1">자연어 검색 (P1)</li>
+      </ul>
+    </div>
+
+    <div class="node card">
+      <div class="h">📄 보고서</div>
+      <ul>
+        <li>보고서 목록/이력</li>
+        <li>편집·미리보기</li>
+        <li>PDF 내보내기</li>
+      </ul>
+    </div>
+    <div class="node card">
+      <div class="h">💬 고객지원</div>
+      <ul>
+        <li>AI 어시스턴트(RAG Q&A)</li>
+        <li>상담 챗봇 → 상담원 연결</li>
+        <li>내 상담 이력</li>
+      </ul>
+    </div>
+    <div class="node card">
+      <div class="h">👤 마이페이지</div>
+      <ul>
+        <li>내 정보</li>
+        <li>내 점검 이력/보고서</li>
+        <li class="p1">내 플랜 (P1)</li>
+      </ul>
+    </div>
+    <div class="node card">
+      <div class="h">🛠 관리자 페이지</div>
+      <ul>
+        <li>사용자·기준 관리</li>
+        <li>상담·RAG 문서 관리</li>
+        <li>시스템 모니터링</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
