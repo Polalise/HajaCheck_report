@@ -1,0 +1,96 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0f1b2d;
+  --navy-2: #16273f;
+  --blue: #2563eb;
+  --teal: #06b6d4;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --green: #22c55e;
+  --ink: #101828;
+  --sub: #475467;
+  --line: #e4e7ec;
+  --bg: #f7f8fa;
+  --card: #ffffff;
+}
+
+html, body {
+  width: 1920px;
+  height: 1080px;
+  font-family: "Malgun Gothic", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background: var(--bg);
+}
+
+.chapter-num {
+  position: absolute;
+  top: 56px;
+  left: 90px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--blue);
+}
+
+.slide-title {
+  position: absolute;
+  top: 92px;
+  left: 90px;
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.footer {
+  position: absolute;
+  bottom: 34px;
+  left: 90px;
+  font-size: 18px;
+  color: #98a2b3;
+}
+
+.page-num {
+  position: absolute;
+  bottom: 34px;
+  right: 90px;
+  font-size: 18px;
+  color: #98a2b3;
+  font-weight: 600;
+}
+
+.brand {
+  position: absolute;
+  top: 40px;
+  right: 90px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 1px;
+}
+.brand span { color: var(--blue); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(16,24,40,0.06);
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(37,99,235,0.1);
+  color: var(--blue);
+}
