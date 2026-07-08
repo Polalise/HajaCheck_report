@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% set title = "수행 계획" %}
+{% set show_brand = true %}
+{% set show_footer = true %}
+{% set page_num = 5 %}
+
+{% block styles %}
+  .hero {
+    position: absolute;
+    top: 170px;
+    left: 90px;
+    width: 1740px;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+  .hero span { color: var(--blue); }
+
+  .rows {
+    position: absolute;
+    top: 320px;
+    left: 90px;
+    width: 1740px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .row { display: flex; gap: 30px; padding: 30px 36px; align-items: flex-start; }
+  .row .idx {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--blue); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 800; flex-shrink: 0;
+  }
+  .row .body .title { font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+  .row .body .desc { font-size: 19px; color: var(--sub); line-height: 1.7; }
+  .row .body .desc b { color: var(--ink); }
+{% endblock %}
+
+{% block content %}
+  <div class="chapter-num">03</div>
+  <div class="slide-title">수행 계획</div>
+
+  <div class="hero">메뉴(도메인) 단위 배정 + <span>풀스택 챕터제</span> — 전원이 화면부터 서버까지 직접 구현</div>
+
+  <div class="rows">
+    <div class="row card">
+      <div class="idx">1</div>
+      <div class="body">
+        <div class="title">역할 분담</div>
+        <div class="desc">9개 메뉴/도메인 단위 배정(기능 축) × 9개 기술 챕터(관심사 축) 매트릭스 교차 운영 — 김관영은 <b>랜딩·보고서·지도 뷰(챕터8 주담당)</b>, 데이터 챕터(챕터2)는 유병현 주담당</div>
+      </div>
+    </div>
+    <div class="row card">
+      <div class="idx">2</div>
+      <div class="body">
+        <div class="title">협업 프로세스</div>
+        <div class="desc"><b>Jira</b>(스프린트 백로그·이슈 트래킹) + <b>Slack</b>(비동기 소통) — PR 리뷰 상시 운영, main 직접 푸시 금지, 부담당 승인 + CI 통과 후 머지, 주 1회 팀 코드 리뷰(①~④)</div>
+      </div>
+    </div>
+    <div class="row card">
+      <div class="idx">3</div>
+      <div class="body">
+        <div class="title">일정 계획 &amp; 리스크</div>
+        <div class="desc">착수보고 <b>7/14</b> → 중간보고 <b>7/31</b> → 완료보고 <b>8/7</b>. 핵심 리스크: <b>학습 데이터 부족</b>(AI Hub 공개 데이터셋 우선 확보) · <b>Spring↔FastAPI 연동 지연</b>(Contract-First OpenAPI + 스프린트1 말 워킹 스켈레톤 관통)</div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
