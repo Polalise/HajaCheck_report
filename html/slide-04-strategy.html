@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .headline {
+    position: absolute;
+    top: 100px;
+    left: 115px;
+    width: 1460px;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--body);
+    line-height: 1.4;
+  }
+  .headline b { color: var(--blue); font-weight: 800; }
+
+  .track {
+    position: absolute;
+    top: 260px;
+    left: 155px;
+    width: 1610px;
+    height: 180px;
+    background: var(--blue-light);
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 60px;
+  }
+  .step {
+    width: 420px;
+    height: 130px;
+    background: #fff;
+    border-radius: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .step .icon { font-size: 34px; color: var(--blue); }
+  .step .name { font-size: 26px; font-weight: 800; color: var(--ink); }
+
+  .connectors { position: absolute; top: 440px; left: 155px; width: 1610px; height: 60px; }
+  .connectors .line { position: absolute; top: 0; width: 1px; height: 60px; background: var(--line); }
+  .connectors .line.c1 { left: 265px; }
+  .connectors .line.c2 { left: 805px; }
+  .connectors .line.c3 { left: 1345px; }
+
+  .descs {
+    position: absolute;
+    top: 500px;
+    left: 155px;
+    width: 1610px;
+    height: 380px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .desc { width: 460px; }
+  .desc .t { font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 14px; text-align: center; }
+  .desc ul { list-style: none; font-size: 16px; color: var(--sub); line-height: 1.9; }
+  .desc ul li:before { content: "· "; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">02</div>
+  <div class="slide-title">서비스 전략</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+
+  <div class="content-card">
+    <div class="headline">점검 업무의 핵심 흐름을 MVP로 묶고, AI 탐지·보고서·상담을 <b>하나의 플랫폼</b>에서 제공합니다</div>
+
+    <div class="track">
+      <div class="step"><div class="icon">👤</div><div class="name">타겟층 분석</div></div>
+      <div class="step"><div class="icon">📦</div><div class="name">MVP 범위</div></div>
+      <div class="step"><div class="icon">🔍</div><div class="name">벤치마킹·차별점</div></div>
+    </div>
+    <div class="connectors">
+      <div class="line c1"></div>
+      <div class="line c2"></div>
+      <div class="line c3"></div>
+    </div>
+
+    <div class="descs">
+      <div class="desc">
+        <div class="t">타겟층 분석</div>
+        <ul>
+          <li>안전점검 기술자 · 시설물 관리자</li>
+          <li>점검 책임자 · 서비스 관리자</li>
+          <li>4개 역할별 사용 흐름 정의</li>
+        </ul>
+      </div>
+      <div class="desc">
+        <div class="t">MVP 범위</div>
+        <ul>
+          <li>업로드 → AI 탐지 → 시각화·검수</li>
+          <li>LLM 보고서 → RAG Q&amp;A → 상담원 연결</li>
+          <li>P0: 로그인·업로드·탐지·보고서·관리자</li>
+        </ul>
+      </div>
+      <div class="desc">
+        <div class="t">벤치마킹·차별점</div>
+        <ul>
+          <li>VODA · Inspekt AI · FMS 등 참고</li>
+          <li>AI 탐지+LLM 보고서+RAG 상담 통합</li>
+          <li>휴먼 검수 기반 오탐 보정</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">4</div>
+</div>
+</body>
+</html>

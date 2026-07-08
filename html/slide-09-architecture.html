@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .message {
+    position: absolute;
+    top: 44px;
+    left: 60px;
+    width: 1570px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--body);
+  }
+  .message b { color: var(--blue); }
+
+  .node {
+    position: absolute;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+  }
+  .node.main { background: var(--blue); color: #fff; }
+  .node.main .t { font-size: 19px; font-weight: 800; }
+  .node.sub { background: var(--blue-light); color: var(--ink); }
+  .node.sub .t { font-size: 15px; font-weight: 700; }
+  .node .s { font-size: 12px; margin-top: 4px; opacity: .85; }
+
+  .line { position: absolute; background: var(--blue-line); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">07</div>
+  <div class="slide-title">시스템 아키텍처 구조도</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+
+  <div class="content-card">
+    <div class="message">Spring Boot는 <b>업무 API</b>를 담당하고, FastAPI는 <b>AI 탐지·보고서·RAG 처리</b>를 담당합니다</div>
+
+    <!-- main row -->
+    <div class="node main" style="left:65px;top:150px;width:250px;height:100px;">
+      <div class="t">사용자 브라우저</div>
+      <div class="s">React SPA</div>
+    </div>
+    <div class="node main" style="left:365px;top:150px;width:250px;height:100px;">
+      <div class="t">Nginx</div>
+      <div class="s">정적 서빙 / 리버스 프록시</div>
+    </div>
+    <div class="node main" style="left:665px;top:150px;width:290px;height:100px;">
+      <div class="t">Spring Boot</div>
+      <div class="s">업무 API / 인증 / 상담</div>
+    </div>
+    <div class="node main" style="left:1005px;top:150px;width:290px;height:100px;">
+      <div class="t">FastAPI</div>
+      <div class="s">AI 내부 API</div>
+    </div>
+    <div class="node main" style="left:1345px;top:150px;width:260px;height:100px;">
+      <div class="t">파일 스토리지</div>
+      <div class="s">원본 / 썸네일 / 오버레이</div>
+    </div>
+
+    <div class="line" style="left:315px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:615px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:955px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:1295px;top:198px;width:50px;height:2px;"></div>
+
+    <!-- sub row: spring boot data -->
+    <div class="line" style="left:809px;top:250px;width:2px;height:70px;"></div>
+    <div class="node sub" style="left:665px;top:320px;width:230px;height:90px;">
+      <div class="t">PostgreSQL</div>
+      <div class="s">업무 데이터</div>
+    </div>
+    <div class="node sub" style="left:925px;top:320px;width:230px;height:90px;">
+      <div class="t">Redis</div>
+      <div class="s">세션 / 잡 상태 / 캐시</div>
+    </div>
+    <div class="line" style="left:780px;top:320px;width:230px;height:2px;"></div>
+
+    <!-- sub row: fastapi AI -->
+    <div class="line" style="left:1149px;top:250px;width:2px;height:180px;"></div>
+    <div class="node sub" style="left:850px;top:450px;width:230px;height:100px;">
+      <div class="t">YOLOv8-seg</div>
+      <div class="s">하자 탐지</div>
+    </div>
+    <div class="node sub" style="left:1105px;top:450px;width:260px;height:100px;">
+      <div class="t">LangChain + Qwen3-8B</div>
+      <div class="s">보고서 생성</div>
+    </div>
+    <div class="node sub" style="left:1390px;top:450px;width:220px;height:100px;">
+      <div class="t">Chroma</div>
+      <div class="s">RAG VectorDB</div>
+    </div>
+    <div class="line" style="left:965px;top:430px;width:530px;height:2px;"></div>
+
+    <div class="node sub" style="left:60px;top:600px;width:1570px;height:100px; text-align:left; flex-direction:row; justify-content:flex-start; gap:16px; padding:0 32px;">
+      <div style="font-size:15px; line-height:1.7; color:var(--sub);">
+        분석 요청은 비동기 잡 패턴으로 처리하고, 진행률은 Redis에 저장해 프론트에서 폴링합니다.<br>
+        FastAPI, PostgreSQL, Redis, Chroma는 외부 포트를 열지 않고 내부 통신 중심으로 구성합니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">9</div>
+</div>
+</body>
+</html>

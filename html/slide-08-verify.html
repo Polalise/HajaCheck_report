@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .venn {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 700px;
+    height: 600px;
+  }
+  .circle {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    mix-blend-mode: multiply;
+  }
+  .circle .k { font-size: 22px; font-weight: 800; color: var(--ink); }
+  .circle .s { font-size: 15px; color: var(--sub); margin-top: 6px; }
+  .c1 { left: 180px; top: 20px; background: rgba(80,155,248,0.35); z-index: 1; }
+  .c2 { left: 20px; top: 260px; background: rgba(80,155,248,0.35); z-index: 2; }
+  .c3 { left: 340px; top: 260px; background: rgba(80,155,248,0.35); z-index: 3; }
+
+  .list {
+    position: absolute;
+    top: 60px;
+    left: 820px;
+    width: 810px;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .li { display: flex; gap: 20px; }
+  .li .n { font-size: 26px; font-weight: 900; color: var(--blue); flex-shrink: 0; width: 34px; }
+  .li .body .t { font-size: 21px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+  .li .body .d { font-size: 16px; color: var(--sub); line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">06</div>
+  <div class="slide-title">검증 및 마무리</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+
+  <div class="content-card">
+    <div class="venn">
+      <div class="circle c1"><div class="k">KPI</div><div class="s">mAP / 처리시간 / E2E</div></div>
+      <div class="circle c2"><div class="k">최종 산출물</div><div class="s">PRD / 화면 / API / ERD</div></div>
+      <div class="circle c3"><div class="k">오픈 이슈</div><div class="s">클래스 / 예산 / 등급</div></div>
+    </div>
+
+    <div class="list">
+      <div class="li">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="t">KPI 목표 달성 전략</div>
+          <div class="d">탐지 성능 mAP@0.5 0.7 이상, 이미지 100장 기준 10분 이내, E2E 시연 무결점 완주, 챗봇 출처 표기율 100%를 검증 기준으로 둡니다.</div>
+        </div>
+      </div>
+      <div class="li">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="t">최종 산출물 체크리스트</div>
+          <div class="d">PRD, 요구사항·기능·정책 정의서, 화면설계서, IA 트리, ERD, API 명세, 코드 컨벤션 문서를 단계별로 제출합니다.</div>
+        </div>
+      </div>
+      <div class="li">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="t">핵심 리스크 대응</div>
+          <div class="d">학습 데이터 부족은 공개 데이터셋과 클래스 축소로 대응하고, Spring-FastAPI 연동 지연은 Contract-First와 워킹 스켈레톤으로 조기 검증합니다.</div>
+        </div>
+      </div>
+      <div class="li">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="t">오픈 이슈 및 Q&amp;A</div>
+          <div class="d">탐지 클래스, HF 계정·예산, 심각도 등급, 상담원 역할, 챗봇 시나리오를 1차 멘토링 전 확정하고 마지막은 Q&amp;A로 마무리합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">8</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .icon {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: var(--blue);
+  }
+  .message {
+    position: absolute;
+    top: 104px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--body);
+  }
+  .message b { color: var(--blue); }
+  .hr {
+    position: absolute;
+    top: 172px;
+    left: 60px;
+    width: 1570px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .rows {
+    position: absolute;
+    top: 208px;
+    left: 60px;
+    width: 1570px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .row { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; }
+
+  .foot {
+    position: absolute;
+    top: 660px;
+    left: 60px;
+    width: 1570px;
+    display: flex;
+    gap: 18px;
+  }
+  .foot .item { flex: 1; background: #f4f6f9; border-radius: 16px; padding: 20px 24px; }
+  .foot .item .k { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 6px; }
+  .foot .item .v { font-size: 15px; color: var(--sub); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">04</div>
+  <div class="slide-title">개발 환경 및 아키텍처</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+
+  <div class="content-card">
+    <div class="icon">🧩</div>
+    <div class="message">React·Spring Boot·FastAPI를 중심으로 <b>탐지, 생성, 검색</b> 기능을 분리해 구현합니다</div>
+    <div class="hr"></div>
+
+    <div class="rows">
+      <div class="row">
+        <span class="chip on">✓ React 18 + Vite</span>
+        <span class="chip on">✓ Spring Boot 3.x</span>
+        <span class="chip off">+ JDK 17</span>
+        <span class="chip on">✓ FastAPI</span>
+      </div>
+      <div class="row">
+        <span class="chip off">+ PostgreSQL</span>
+        <span class="chip off">+ Redis</span>
+        <span class="chip on">✓ YOLOv8-seg</span>
+        <span class="chip off">+ ONNX Runtime</span>
+        <span class="chip off">+ LangChain</span>
+      </div>
+      <div class="row">
+        <span class="chip off">+ Qwen3-8B</span>
+        <span class="chip off">+ Chroma</span>
+        <span class="chip off">+ OCI Ampere A1</span>
+        <span class="chip off">+ Nginx</span>
+        <span class="chip off">+ GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="item"><div class="k">Frontend</div><div class="v">React SPA</div></div>
+      <div class="item"><div class="k">Backend</div><div class="v">Spring Boot 모듈러 모놀리스</div></div>
+      <div class="item"><div class="k">AI Server</div><div class="v">FastAPI 기반 탐지·LLM·RAG</div></div>
+      <div class="item"><div class="k">Infra</div><div class="v">OCI VM + Nginx + systemd + GitHub Actions</div></div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">6</div>
+</div>
+</body>
+</html>

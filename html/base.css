@@ -1,24 +1,34 @@
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-1Thin.otf"); font-weight: 100; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-2ExtraLight.otf"); font-weight: 200; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-3Light.otf"); font-weight: 300; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-4Regular.otf"); font-weight: 400; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-5Medium.otf"); font-weight: 500; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-6SemiBold.otf"); font-weight: 600; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-7Bold.otf"); font-weight: 700; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-8ExtraBold.otf"); font-weight: 800; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-9Black.otf"); font-weight: 900; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f1b2d;
-  --navy-2: #16273f;
-  --blue: #2563eb;
-  --teal: #06b6d4;
-  --amber: #f59e0b;
-  --red: #ef4444;
-  --green: #22c55e;
-  --ink: #101828;
-  --sub: #475467;
-  --line: #e4e7ec;
-  --bg: #f7f8fa;
-  --card: #ffffff;
+  --blue: #509BF8;
+  --blue-light: #EAF4FF;
+  --blue-line: #9FC4EF;
+  --blue-chart: #BFD9FB;
+  --ink: #1A1A1A;
+  --body: #222222;
+  --sub: #666666;
+  --footer-c: #A0A0A0;
+  --line: #D8D8D8;
+  --line-strong: #222222;
+  --bg: #F5F5F5;
+  --card: #FFFFFF;
 }
 
 html, body {
   width: 1920px;
   height: 1080px;
-  font-family: "Malgun Gothic", "Segoe UI", sans-serif;
+  font-family: "A2Z", "Malgun Gothic", "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--ink);
   overflow: hidden;
@@ -33,64 +43,95 @@ html, body {
 
 .chapter-num {
   position: absolute;
-  top: 56px;
-  left: 90px;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 4px;
+  top: 106px;
+  left: 115px;
+  font-size: 62px;
+  font-weight: 900;
   color: var(--blue);
+  line-height: 1;
 }
 
 .slide-title {
   position: absolute;
-  top: 92px;
-  left: 90px;
-  font-size: 52px;
+  top: 118px;
+  left: 200px;
+  font-size: 54px;
   font-weight: 800;
   color: var(--ink);
+  line-height: 1;
 }
 
 .footer {
   position: absolute;
-  bottom: 34px;
-  left: 90px;
-  font-size: 18px;
-  color: #98a2b3;
+  bottom: 40px;
+  left: 115px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--footer-c);
 }
 
 .page-num {
   position: absolute;
-  bottom: 34px;
-  right: 90px;
-  font-size: 18px;
-  color: #98a2b3;
-  font-weight: 600;
+  bottom: 40px;
+  right: 115px;
+  font-size: 20px;
+  color: var(--footer-c);
+  font-weight: 500;
 }
 
 .brand {
   position: absolute;
-  top: 40px;
-  right: 90px;
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: 1px;
+  top: 60px;
+  right: 115px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.2px;
 }
-.brand span { color: var(--blue); }
+.brand span { color: var(--ink); font-weight: 700; }
+
+.content-card {
+  position: absolute;
+  top: 200px;
+  left: 115px;
+  width: 1690px;
+  height: 760px;
+  background: var(--card);
+  border-radius: 40px;
+}
 
 .card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(16,24,40,0.06);
+  background: var(--blue-light);
+  border-radius: 20px;
 }
 
 .badge {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 10px 24px;
   border-radius: 999px;
   font-size: 20px;
   font-weight: 700;
-  background: rgba(37,99,235,0.1);
-  color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 84px;
+  padding: 0 44px;
+  border-radius: 42px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.chip.off {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  color: var(--sub);
+}
+.chip.on {
+  background: var(--blue);
+  color: #fff;
+  border: none;
 }

@@ -6,124 +6,142 @@
 <style>
   .subtitle {
     position: absolute;
-    top: 160px;
-    left: 90px;
+    top: 176px;
+    left: 200px;
     font-size: 24px;
+    font-weight: 500;
     color: var(--sub);
   }
 
-  .compare {
+  .divider {
     position: absolute;
-    top: 240px;
-    left: 90px;
-    width: 900px;
-    height: 380px;
-    display: flex;
-    gap: 24px;
+    top: 60px;
+    left: 810px;
+    width: 1px;
+    height: 620px;
+    background: var(--line);
   }
-  .compare .col {
-    flex: 1;
-    padding: 32px;
+
+  .left-col {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 720px;
+    height: 620px;
     display: flex;
     flex-direction: column;
   }
-  .compare .col.before { background: #fef3f2; border: 1px solid #fecdca; border-radius: 18px; }
-  .compare .col.after { background: #eff8ff; border: 1px solid #b2ddff; border-radius: 18px; }
-  .compare .tag { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
-  .compare .col.before .tag { color: var(--red); }
+  .team-tag { margin-bottom: 20px; }
+  .team-line { font-size: 22px; color: var(--body); line-height: 1.6; margin-bottom: 22px; }
+  .team-line b { color: var(--ink); }
+
+  .compare { display: flex; gap: 18px; flex: 1; }
+  .compare .col { flex: 1; padding: 26px; display: flex; flex-direction: column; border-radius: 20px; }
+  .compare .col.before { background: #fdf2f2; }
+  .compare .col.after { background: var(--blue-light); }
+  .compare .tag { font-size: 17px; font-weight: 800; margin-bottom: 12px; }
+  .compare .col.before .tag { color: #d84343; }
   .compare .col.after .tag { color: var(--blue); }
-  .compare .headline { font-size: 30px; font-weight: 800; margin-bottom: 18px; }
-  .compare ul { list-style: none; font-size: 19px; color: var(--sub); line-height: 1.9; }
+  .compare .headline { font-size: 24px; font-weight: 800; margin-bottom: 14px; color: var(--ink); }
+  .compare ul { list-style: none; font-size: 16px; color: var(--sub); line-height: 1.8; }
   .compare ul li:before { content: "· "; }
-  .arrow { align-self: center; font-size: 40px; color: #98a2b3; }
 
-  .stats {
+  .goal-line { margin-top: 20px; font-size: 20px; font-weight: 600; color: var(--ink); background: #f4f6f9; border-radius: 999px; padding: 20px 28px; text-align: center; }
+
+  .right-col {
     position: absolute;
-    top: 240px;
-    left: 1040px;
-    width: 790px;
-    height: 380px;
+    top: 60px;
+    left: 850px;
+    width: 780px;
+    height: 620px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
-  .stat-row { display: flex; gap: 20px; flex: 1; }
-  .stat { flex: 1; border-radius: 18px; padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
-  .stat .num { font-size: 44px; font-weight: 900; color: var(--blue); }
-  .stat .label { font-size: 18px; color: var(--sub); margin-top: 6px; }
+  .stat-row { display: flex; gap: 18px; flex: 1; }
+  .stat { flex: 1; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+  .stat .num { font-size: 40px; font-weight: 900; color: var(--blue); }
+  .stat .label { font-size: 16px; color: var(--sub); margin-top: 8px; }
+  .stat .sub { font-size: 13px; color: #9aa4b2; margin-top: 4px; }
 
-  .callouts {
-    position: absolute;
-    top: 660px;
-    left: 90px;
-    width: 1740px;
-    display: flex;
-    gap: 30px;
+  .effect {
+    background: #f4f6f9;
+    border-radius: 20px;
+    padding: 24px 28px;
   }
-  .callout { flex: 1; padding: 30px 34px; }
-  .callout .badge { margin-bottom: 14px; }
-  .callout .text { font-size: 21px; font-weight: 600; line-height: 1.6; color: var(--ink); }
+  .effect .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+  .effect ul { list-style: none; font-size: 15px; color: var(--sub); line-height: 1.7; }
+  .effect ul li:before { content: "· "; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="chapter-num">01</div>
   <div class="slide-title">프로젝트 소개</div>
-  <div class="subtitle">건물 외벽·교량 등 시설물 하자를 AI로 자동 탐지·보고하는 점검 지원 플랫폼</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="subtitle">고위험·고비용의 육안 점검을 AI 탐지와 보고서 자동화로 <b style="color:var(--blue)">보조</b>합니다</div>
 
-  <div class="compare">
-    <div class="col before card">
-      <div class="tag">BEFORE</div>
-      <div class="headline">사람이 직접 점검</div>
-      <ul>
-        <li>추락 위험 · 고비용 · 장시간 소요</li>
-        <li>점검자 숙련도에 따라 판독 편차</li>
-        <li>점검 이력이 체계적으로 축적 안 됨</li>
-      </ul>
-    </div>
-    <div class="arrow">→</div>
-    <div class="col after card">
-      <div class="tag">AFTER · hajaCheck</div>
-      <div class="headline">AI 자동 탐지</div>
-      <ul>
-        <li>이미지 업로드만으로 하자 자동 탐지</li>
-        <li>일관된 기준의 등급·보고서 생성</li>
-        <li>점검 이력 축적 · 회차 간 비교</li>
-      </ul>
-    </div>
-  </div>
+  <div class="content-card">
+    <div class="divider"></div>
 
-  <div class="stats">
-    <div class="stat-row">
-      <div class="stat card">
-        <div class="num">8명</div>
-        <div class="label">팀 구성 (PM 1 · PL 1 · 팀원 6)</div>
-      </div>
-      <div class="stat card">
-        <div class="num">4주</div>
-        <div class="label">2026.07.09 ~ 08.07</div>
-      </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat card">
-        <div class="num">mAP 0.7↑</div>
-        <div class="label">균열 탐지 성능 목표 (§9 KPI)</div>
-      </div>
-      <div class="stat card">
-        <div class="num">10분</div>
-        <div class="label">이미지 100장 → 보고서 초안</div>
-      </div>
-    </div>
-  </div>
+    <div class="left-col">
+      <div class="badge team-tag">팀 소개</div>
+      <div class="team-line">팀명 <b>HajaCheck</b> · PM/PL 포함 <b>8명</b><br>시설물 점검 업무를 AI로 보조하는 풀스택 개발팀</div>
 
-  <div class="callouts">
-    <div class="callout card">
-      <div class="badge">문제 정의</div>
-      <div class="text">추락 위험 · 고비용 · 판독 편차 — 사람이 직접 점검하기 어려운 구조</div>
+      <div class="compare">
+        <div class="col before">
+          <div class="tag">문제 배경</div>
+          <div class="headline">사람이 직접 점검</div>
+          <ul>
+            <li>추락 위험 · 장시간 소요</li>
+            <li>숙련도에 따른 판독 편차</li>
+            <li>점검 이력 축적 미흡</li>
+          </ul>
+        </div>
+        <div class="col after">
+          <div class="tag">솔루션 · HajaCheck</div>
+          <div class="headline">AI 자동 탐지</div>
+          <ul>
+            <li>이미지·영상 업로드 → 자동 탐지</li>
+            <li>오버레이 검수 + LLM 보고서 초안</li>
+            <li>RAG 기반 점검 기준 Q&amp;A</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="goal-line">업로드 → 탐지 → 검수 → 보고서</div>
     </div>
-    <div class="callout card">
-      <div class="badge">시장성 검증</div>
-      <div class="text">국내외 상용화 서비스 존재 (뷰메진 VODA, Inspekt AI 등) — 이미 검증된 시장</div>
+
+    <div class="right-col">
+      <div class="stat-row">
+        <div class="stat card">
+          <div class="num">8명</div>
+          <div class="label">팀 구성</div>
+          <div class="sub">PM · PL · 메뉴 오너 · 기술 챕터</div>
+        </div>
+        <div class="stat card">
+          <div class="num">4주</div>
+          <div class="label">E2E 데모 완성 기한</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat card">
+          <div class="num">mAP 0.7↑</div>
+          <div class="label">균열 탐지 성능 목표</div>
+        </div>
+        <div class="stat card">
+          <div class="num">10분</div>
+          <div class="label">100장 → 보고서 초안</div>
+        </div>
+      </div>
+      <div class="effect">
+        <div class="h">기대 효과</div>
+        <ul>
+          <li>판독 시간 단축과 하자 누락 감소</li>
+          <li>점검 이력 축적을 통한 상태 추적</li>
+          <li>보고서 작성 부담 완화</li>
+        </ul>
+      </div>
     </div>
   </div>
 

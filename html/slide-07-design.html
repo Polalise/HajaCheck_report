@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .row1, .row2 {
+    position: absolute;
+    left: 60px;
+    width: 1570px;
+    display: flex;
+    gap: 40px;
+  }
+  .row1 { top: 60px; height: 280px; }
+  .row2 { top: 380px; height: 280px; justify-content: center; }
+
+  .item {
+    width: 490px;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .item .t { font-size: 26px; font-weight: 800; color: var(--ink); line-height: 1.4; }
+  .item .d { font-size: 17px; color: var(--sub); line-height: 1.6; margin-top: 14px; }
+  .item .icon { align-self: flex-end; font-size: 44px; color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">05</div>
+  <div class="slide-title">서비스 설계</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+
+  <div class="content-card">
+    <div class="row1">
+      <div class="item card">
+        <div>
+          <div class="t">요구사항 정의</div>
+          <div class="d">P0/P1/P2 범위와 사용자 역할 기준 정리</div>
+        </div>
+        <div class="icon">📋</div>
+      </div>
+      <div class="item card">
+        <div>
+          <div class="t">기능 정의</div>
+          <div class="d">FR-1~FR-9 핵심 기능과 처리 흐름 정의</div>
+        </div>
+        <div class="icon">⚙️</div>
+      </div>
+      <div class="item card">
+        <div>
+          <div class="t">정책 정의</div>
+          <div class="d">권한, 플랜 쿼터, 심각도 등급, 상태머신 기준</div>
+        </div>
+        <div class="icon">🔐</div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="item card">
+        <div>
+          <div class="t">IA·화면 설계</div>
+          <div class="d">메뉴 구조와 핵심 화면 흐름 정리</div>
+        </div>
+        <div class="icon">🗺️</div>
+      </div>
+      <div class="item card">
+        <div>
+          <div class="t">API·ERD 설계</div>
+          <div class="d">Contract-First 기반 API 계약과 데이터 모델 정의</div>
+        </div>
+        <div class="icon">🔗</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">7</div>
+</div>
+</body>
+</html>

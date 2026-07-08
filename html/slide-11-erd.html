@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .subtitle {
+    position: absolute;
+    top: 176px;
+    left: 200px;
+    width: 1500px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--sub);
+  }
+
+  .divider {
+    position: absolute;
+    top: 60px;
+    left: 1130px;
+    width: 1px;
+    height: 640px;
+    background: var(--line);
+  }
+
+  .erd {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 1020px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .erow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .ent {
+    background: var(--blue-light);
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 12px;
+  }
+  .ent.strong { background: var(--blue); color: #fff; }
+  .rel { font-size: 13px; color: var(--sub); }
+
+  .principles {
+    position: absolute;
+    top: 60px;
+    left: 1170px;
+    width: 460px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .principles .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+  .principles .li { display: flex; gap: 16px; margin-bottom: 22px; }
+  .principles .li .n { font-size: 22px; font-weight: 900; color: var(--blue); flex-shrink: 0; }
+  .principles .li .t { font-size: 16px; color: var(--body); line-height: 1.6; }
+
+  .highlight-box { background: #f4f6f9; border-radius: 16px; padding: 24px 26px; }
+  .highlight-box .t { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+  .highlight-box ul { list-style: none; font-size: 14px; color: var(--sub); line-height: 1.7; }
+  .highlight-box ul li:before { content: "· "; }
+  .highlight-box b { color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">09</div>
+  <div class="slide-title">ERD 요약</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="subtitle">시설물, 점검, 미디어, 하자, 보고서를 중심으로 <b style="color:var(--blue)">점검 이력과 검수 이력</b>을 축적합니다</div>
+
+  <div class="content-card">
+    <div class="divider"></div>
+
+    <div class="erd">
+      <div class="erow">
+        <span class="ent strong">users</span><span class="rel">owns→</span>
+        <span class="ent">facilities</span><span class="rel">has→</span>
+        <span class="ent">inspections</span><span class="rel">uploads→</span>
+        <span class="ent">media</span><span class="rel">detects→</span>
+        <span class="ent">defects</span><span class="rel">records→</span>
+        <span class="ent strong">defect_revisions</span>
+      </div>
+      <div class="erow">
+        <span class="ent">inspections</span><span class="rel">generates→</span>
+        <span class="ent">reports</span><span class="rel">←edits</span>
+        <span class="ent">users</span>
+      </div>
+      <div class="erow">
+        <span class="ent">users</span><span class="rel">starts→</span>
+        <span class="ent">chat_sessions</span><span class="rel">contains→</span>
+        <span class="ent strong">chat_messages</span><span class="rel">(citation 필수)</span>
+      </div>
+      <div class="erow">
+        <span class="ent">users</span><span class="rel">requests→</span>
+        <span class="ent">counsel_tickets</span>
+        <span class="rel" style="margin-left:24px;">users</span><span class="rel">receives→</span>
+        <span class="ent">notifications</span>
+      </div>
+      <div class="erow">
+        <span class="ent">plans</span><span class="rel">applies→</span>
+        <span class="ent">user_plans</span><span class="rel">←subscribes</span>
+        <span class="ent">users</span><span class="rel">tracks→</span>
+        <span class="ent strong">usage_counters</span>
+      </div>
+      <div class="erow">
+        <span class="rel">기타: rag_documents — 상담·RAG 문서 관리</span>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div>
+        <div class="h">설계 원칙</div>
+        <div class="li"><div class="n">1</div><div class="t">하자 검수 이력은 append-only로 보존합니다</div></div>
+        <div class="li"><div class="n">2</div><div class="t">RAG 답변은 출처 citation 필드를 필수로 둡니다</div></div>
+        <div class="li"><div class="n">3</div><div class="t">역할 권한과 플랜 쿼터는 분리 관리합니다</div></div>
+      </div>
+      <div class="highlight-box">
+        <div class="t">v0.41 설계 보강 포인트</div>
+        <ul>
+          <li><b>defect_revisions</b> — 검수 변경 이력 추적</li>
+          <li><b>usage_counters</b> — 플랜 쿼터 사용량 추적</li>
+          <li><b>chat_messages.citation</b> — 답변 출처 필드</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">11</div>
+</div>
+</body>
+</html>

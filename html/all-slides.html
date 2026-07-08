@@ -2,762 +2,782 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>hajaCheck 착수보고 - 김관영 담당 슬라이드 (전체)</title>
+<title>HajaCheck 착수보고 - 전체 슬라이드 (12장)</title>
 <style>
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-1Thin.otf"); font-weight: 100; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-2ExtraLight.otf"); font-weight: 200; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-3Light.otf"); font-weight: 300; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-4Regular.otf"); font-weight: 400; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-5Medium.otf"); font-weight: 500; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-6SemiBold.otf"); font-weight: 600; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-7Bold.otf"); font-weight: 700; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-8ExtraBold.otf"); font-weight: 800; }
+@font-face { font-family: "A2Z"; src: url("../data/font/에이투지체-9Black.otf"); font-weight: 900; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f1b2d;
-  --navy-2: #16273f;
-  --blue: #2563eb;
-  --teal: #06b6d4;
-  --amber: #f59e0b;
-  --red: #ef4444;
-  --green: #22c55e;
-  --ink: #101828;
-  --sub: #475467;
-  --line: #e4e7ec;
-  --bg: #f7f8fa;
-  --card: #ffffff;
+  --blue: #509BF8;
+  --blue-light: #EAF4FF;
+  --blue-line: #9FC4EF;
+  --blue-chart: #BFD9FB;
+  --ink: #1A1A1A;
+  --body: #222222;
+  --sub: #666666;
+  --footer-c: #A0A0A0;
+  --line: #D8D8D8;
+  --line-strong: #222222;
+  --bg: #F5F5F5;
+  --card: #FFFFFF;
 }
 
 html, body {
   width: 1920px;
   height: 1080px;
-  font-family: "Malgun Gothic", "Segoe UI", sans-serif;
+  font-family: "A2Z", "Malgun Gothic", "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--ink);
   overflow: hidden;
 }
+html { width: auto; height: auto; overflow: visible; }
 
-.slide {
-  position: relative;
-  width: 1920px;
-  height: 1080px;
-  background: var(--bg);
-}
+.slide { position: relative; width: 1920px; height: 1080px; background: var(--bg); }
 
-.chapter-num {
-  position: absolute;
-  top: 56px;
-  left: 90px;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: var(--blue);
-}
+.chapter-num { position: absolute; top: 106px; left: 115px; font-size: 62px; font-weight: 900; color: var(--blue); line-height: 1; }
+.slide-title { position: absolute; top: 118px; left: 200px; font-size: 54px; font-weight: 800; color: var(--ink); line-height: 1; }
+.footer { position: absolute; bottom: 40px; left: 115px; font-size: 20px; font-weight: 400; color: var(--footer-c); }
+.page-num { position: absolute; bottom: 40px; right: 115px; font-size: 20px; color: var(--footer-c); font-weight: 500; }
+.brand { position: absolute; top: 60px; right: 115px; font-size: 26px; font-weight: 700; color: var(--ink); letter-spacing: 0.2px; }
+.brand span { color: var(--ink); font-weight: 700; }
+.content-card { position: absolute; top: 200px; left: 115px; width: 1690px; height: 760px; background: var(--card); border-radius: 40px; }
+.card { background: var(--blue-light); border-radius: 20px; }
+.badge { display: inline-block; padding: 10px 24px; border-radius: 999px; font-size: 20px; font-weight: 700; background: var(--blue); color: #fff; }
+.chip { display: inline-flex; align-items: center; gap: 10px; height: 84px; padding: 0 44px; border-radius: 42px; font-size: 24px; font-weight: 700; }
+.chip.off { background: #fff; border: 1.5px solid var(--line); color: var(--sub); }
+.chip.on { background: var(--blue); color: #fff; border: none; }
 
-.slide-title {
-  position: absolute;
-  top: 92px;
-  left: 90px;
-  font-size: 52px;
-  font-weight: 800;
-  color: var(--ink);
-}
+.deck-page { width: 1920px; height: 1080px; position: relative; overflow: hidden; margin: 0 auto 40px auto; box-shadow: 0 0 0 1px #d0d5dd; scroll-snap-align: start; scroll-margin-top: 40px; }
 
-.footer {
-  position: absolute;
-  bottom: 34px;
-  left: 90px;
-  font-size: 18px;
-  color: #98a2b3;
-}
+html { scroll-snap-type: y proximity; scroll-behavior: smooth; }
 
-.page-num {
-  position: absolute;
-  bottom: 34px;
-  right: 90px;
-  font-size: 18px;
-  color: #98a2b3;
-  font-weight: 600;
-}
-
-.brand {
-  position: absolute;
-  top: 40px;
-  right: 90px;
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: 1px;
-}
-.brand span { color: var(--blue); }
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(16,24,40,0.06);
-}
-
-.badge {
-  display: inline-block;
-  padding: 8px 20px;
+.pager {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(26,26,26,0.88);
+  color: #fff;
+  padding: 12px 18px;
   border-radius: 999px;
-  font-size: 20px;
-  font-weight: 700;
-  background: rgba(37,99,235,0.1);
-  color: var(--blue);
+  font-family: "A2Z", "Malgun Gothic", "Segoe UI", sans-serif;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
-
-
-.deck-page {
-  width: 1920px;
-  height: 1080px;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto 40px auto;
-  box-shadow: 0 0 0 1px #d0d5dd;
+.pager button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.pager button:disabled { background: #555; cursor: default; opacity: .5; }
+.pager .count { font-size: 15px; font-weight: 700; min-width: 56px; text-align: center; }
+.pager .dots { display: flex; gap: 6px; }
+.pager .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #666; cursor: pointer;
+}
+.pager .dot.active { background: var(--blue); width: 20px; border-radius: 4px; }
 
-/* === slide-01-cover.html === */
-#slide-01 { background: linear-gradient(135deg, #0f1b2d 0%, #16273f 55%, #1d3a5f 100%); }
-#slide-01 .slide { background: transparent; }
-#slide-01 .wordmark {
-    position: absolute;
-    top: 300px;
-    left: 150px;
-    font-size: 96px;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -1px;
-  }
-#slide-01 .wordmark span { color: #38bdf8; }
-#slide-01 .subtitle {
-    position: absolute;
-    top: 430px;
-    left: 152px;
-    font-size: 40px;
-    font-weight: 500;
-    color: #cbd5e1;
-  }
-#slide-01 .report-label {
-    position: absolute;
-    top: 540px;
-    left: 152px;
-    font-size: 30px;
-    font-weight: 700;
-    color: #38bdf8;
-    letter-spacing: 2px;
-  }
-#slide-01 .meta {
-    position: absolute;
-    bottom: 110px;
-    left: 152px;
-    font-size: 26px;
-    color: #94a3b8;
-    line-height: 1.8;
-  }
-#slide-01 .meta b { color: #e2e8f0; }
-#slide-01 .deco-ring {
-    position: absolute;
-    right: -180px;
-    top: -180px;
-    width: 900px;
-    height: 900px;
-    border-radius: 50%;
-    border: 2px solid rgba(56,189,248,0.25);
-  }
-#slide-01 .deco-ring.small {
-    right: -60px;
-    top: 60px;
-    width: 560px;
-    height: 560px;
-    border-color: rgba(56,189,248,0.4);
-  }
-#slide-01 .top-tag {
-    position: absolute;
-    top: 90px;
-    left: 152px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #7dd3fc;
-    letter-spacing: 6px;
-  }
-/* === slide-02-toc.html === */
-#slide-02 .toc-label {
-    position: absolute;
-    top: 88px;
-    left: 90px;
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 6px;
-    color: #98a2b3;
-  }
-#slide-02 .grid {
-    position: absolute;
-    top: 200px;
-    left: 90px;
-    width: 1740px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 32px;
-    height: 740px;
-  }
-#slide-02 .chapter {
-    padding: 40px 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-#slide-02 .chapter .num {
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--blue);
-    margin-bottom: 10px;
-  }
-#slide-02 .chapter .title {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--ink);
-    margin-bottom: 14px;
-  }
-#slide-02 .chapter .sub {
-    font-size: 22px;
-    color: var(--sub);
-    line-height: 1.5;
-  }
-/* === slide-03-intro.html === */
-#slide-03 .subtitle {
-    position: absolute;
-    top: 160px;
-    left: 90px;
-    font-size: 24px;
-    color: var(--sub);
-  }
-#slide-03 .compare {
-    position: absolute;
-    top: 240px;
-    left: 90px;
-    width: 900px;
-    height: 380px;
-    display: flex;
-    gap: 24px;
-  }
-#slide-03 .compare .col {
-    flex: 1;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-  }
-#slide-03 .compare .col.before { background: #fef3f2; border: 1px solid #fecdca; border-radius: 18px; }
-#slide-03 .compare .col.after { background: #eff8ff; border: 1px solid #b2ddff; border-radius: 18px; }
-#slide-03 .compare .tag { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
-#slide-03 .compare .col.before .tag { color: var(--red); }
+/* === slide-01 cover === */
+#slide-01 .top-bar { position: absolute; top: 0; left: 0; width: 100%; height: 100px; display: flex; align-items: center; }
+#slide-01 .date-tag { width: 260px; height: 100px; background: var(--blue); color: #fff; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; border-radius: 0 999px 999px 0; }
+#slide-01 .top-title { margin-left: 60px; font-size: 26px; font-weight: 700; color: var(--ink); }
+#slide-01 .brand-logo { position: absolute; top: 32px; right: 115px; display: flex; align-items: center; gap: 12px; }
+#slide-01 .brand-logo img { height: 40px; width: auto; }
+#slide-01 .brand-logo span { font-size: 28px; font-weight: 800; color: var(--ink); letter-spacing: 1px; }
+#slide-01 .wordmark { position: absolute; top: 220px; left: 152px; font-size: 96px; font-weight: 900; color: var(--ink); letter-spacing: -2px; }
+#slide-01 .subtitle { position: absolute; top: 372px; left: 154px; font-size: 30px; font-weight: 500; color: var(--ink); }
+#slide-01 .meta { position: absolute; bottom: 96px; left: 152px; right: 115px; display: flex; align-items: center; font-size: 22px; color: var(--ink); }
+#slide-01 .meta b { font-weight: 700; }
+#slide-01 .meta .sep { margin: 0 26px; color: var(--line); }
+#slide-01 .meta .rule { flex: 1; height: 1px; background: #98a2b3; margin-left: 40px; }
+
+/* === slide-02 toc === */
+#slide-02 .toc-label { position: absolute; top: 118px; left: 115px; font-size: 52px; font-weight: 900; color: var(--blue); letter-spacing: 1px; }
+#slide-02 .brand-logo { position: absolute; top: 32px; right: 115px; display: flex; align-items: center; gap: 12px; }
+#slide-02 .brand-logo img { height: 40px; width: auto; }
+#slide-02 .brand-logo span { font-size: 28px; font-weight: 800; color: var(--ink); letter-spacing: 1px; }
+#slide-02 .grid { position: absolute; top: 648px; left: 115px; width: 1690px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); row-gap: 56px; column-gap: 60px; }
+#slide-02 .chapter { display: flex; align-items: baseline; gap: 24px; }
+#slide-02 .chapter .num { font-size: 46px; font-weight: 900; color: var(--blue); flex-shrink: 0; }
+#slide-02 .chapter .body { display: flex; flex-direction: column; }
+#slide-02 .chapter .title { font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+#slide-02 .chapter .sub { font-size: 16px; color: var(--sub); line-height: 1.6; }
+
+/* === slide-03 intro === */
+#slide-03 .subtitle { position: absolute; top: 176px; left: 200px; font-size: 24px; font-weight: 500; color: var(--sub); }
+#slide-03 .divider { position: absolute; top: 60px; left: 810px; width: 1px; height: 620px; background: var(--line); }
+#slide-03 .left-col { position: absolute; top: 60px; left: 60px; width: 720px; height: 620px; display: flex; flex-direction: column; }
+#slide-03 .team-tag { margin-bottom: 20px; }
+#slide-03 .team-line { font-size: 22px; color: var(--body); line-height: 1.6; margin-bottom: 22px; }
+#slide-03 .team-line b { color: var(--ink); }
+#slide-03 .compare { display: flex; gap: 18px; flex: 1; }
+#slide-03 .compare .col { flex: 1; padding: 26px; display: flex; flex-direction: column; border-radius: 20px; }
+#slide-03 .compare .col.before { background: #fdf2f2; }
+#slide-03 .compare .col.after { background: var(--blue-light); }
+#slide-03 .compare .tag { font-size: 17px; font-weight: 800; margin-bottom: 12px; }
+#slide-03 .compare .col.before .tag { color: #d84343; }
 #slide-03 .compare .col.after .tag { color: var(--blue); }
-#slide-03 .compare .headline { font-size: 30px; font-weight: 800; margin-bottom: 18px; }
-#slide-03 .compare ul { list-style: none; font-size: 19px; color: var(--sub); line-height: 1.9; }
+#slide-03 .compare .headline { font-size: 24px; font-weight: 800; margin-bottom: 14px; color: var(--ink); }
+#slide-03 .compare ul { list-style: none; font-size: 16px; color: var(--sub); line-height: 1.8; }
 #slide-03 .compare ul li:before { content: "· "; }
-#slide-03 .arrow { align-self: center; font-size: 40px; color: #98a2b3; }
-#slide-03 .stats {
-    position: absolute;
-    top: 240px;
-    left: 1040px;
-    width: 790px;
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-#slide-03 .stat-row { display: flex; gap: 20px; flex: 1; }
-#slide-03 .stat { flex: 1; border-radius: 18px; padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
-#slide-03 .stat .num { font-size: 44px; font-weight: 900; color: var(--blue); }
-#slide-03 .stat .label { font-size: 18px; color: var(--sub); margin-top: 6px; }
-#slide-03 .callouts {
-    position: absolute;
-    top: 660px;
-    left: 90px;
-    width: 1740px;
-    display: flex;
-    gap: 30px;
-  }
-#slide-03 .callout { flex: 1; padding: 30px 34px; }
-#slide-03 .callout .badge { margin-bottom: 14px; }
-#slide-03 .callout .text { font-size: 21px; font-weight: 600; line-height: 1.6; color: var(--ink); }
-/* === slide-05-plan.html === */
-#slide-04 .hero {
-    position: absolute;
-    top: 170px;
-    left: 90px;
-    width: 1740px;
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--navy);
-    line-height: 1.4;
-  }
-#slide-04 .hero span { color: var(--blue); }
-#slide-04 .rows {
-    position: absolute;
-    top: 320px;
-    left: 90px;
-    width: 1740px;
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-  }
-#slide-04 .row { display: flex; gap: 30px; padding: 30px 36px; align-items: flex-start; }
-#slide-04 .row .idx {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: var(--blue); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; font-weight: 800; flex-shrink: 0;
-  }
-#slide-04 .row .body .title { font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
-#slide-04 .row .body .desc { font-size: 19px; color: var(--sub); line-height: 1.7; }
-#slide-04 .row .body .desc b { color: var(--ink); }
-/* === slide-08-wrapup.html === */
-#slide-05 .cols {
-    position: absolute;
-    top: 190px;
-    left: 90px;
-    width: 1740px;
-    display: flex;
-    gap: 28px;
-    height: 560px;
-  }
-#slide-05 .col { flex: 1; padding: 34px 32px; display: flex; flex-direction: column; }
-#slide-05 .col .idx {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: var(--blue); color: #fff; font-weight: 800; font-size: 20px;
-    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
-  }
-#slide-05 .col .title { font-size: 25px; font-weight: 800; margin-bottom: 16px; color: var(--ink); }
-#slide-05 .col ul { list-style: none; font-size: 18px; color: var(--sub); line-height: 1.85; }
-#slide-05 .col ul li:before { content: "· "; }
-#slide-05 .col ul li b { color: var(--ink); }
-#slide-05 .badges {
-    position: absolute;
-    top: 790px;
-    left: 90px;
-    width: 1740px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-#slide-05 .badges .label { font-size: 20px; font-weight: 700; color: var(--sub); margin-right: 10px; }
-#slide-05 .qna {
-    position: absolute;
-    bottom: 34px;
-    right: 90px;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--blue);
-  }
-/* === slide-09-mockup.html === */
-#slide-06 .subtitle {
-    position: absolute;
-    top: 160px;
-    left: 90px;
-    font-size: 24px;
-    color: var(--sub);
-  }
-#slide-06 .screens {
-    position: absolute;
-    top: 240px;
-    left: 90px;
-    width: 1740px;
-    display: flex;
-    gap: 30px;
-    height: 700px;
-  }
-#slide-06 .screen { flex: 1; padding: 26px; display: flex; flex-direction: column; }
-#slide-06 .screen .name { font-size: 22px; font-weight: 800; margin-bottom: 16px; color: var(--ink); }
-#slide-06 .mock { flex: 1; background: #f2f4f7; border: 1px dashed #c9cfda; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
-#slide-06 .bar { height: 26px; background: #dfe3ea; border-radius: 6px; }
-#slide-06 .bar.short { width: 40%; }
-#slide-06 .bar.blue { background: var(--blue); opacity: .85; }
-#slide-06 .thumb-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; flex: 1; }
-#slide-06 .thumb { background: #d7dee9; border-radius: 8px; position: relative; }
-#slide-06 .thumb .box { position: absolute; border: 2px solid var(--red); border-radius: 4px; }
-#slide-06 .thumb.c1 .box { top: 20%; left: 25%; width: 40%; height: 35%; }
-#slide-06 .thumb.c2 .box { top: 40%; left: 15%; width: 50%; height: 30%; border-color: var(--amber); }
-#slide-06 .kpi-row { display: flex; gap: 10px; }
-#slide-06 .kpi { flex: 1; background: #e6effe; border-radius: 8px; height: 60px; }
-#slide-06 .chart { flex: 1; background: #eef1f5; border-radius: 10px; position: relative; overflow: hidden; }
-#slide-06 .chart .b { position: absolute; bottom: 0; width: 14%; background: var(--teal); border-radius: 3px 3px 0 0; }
-#slide-06 .doc-lines { flex: 1; display: flex; flex-direction: column; gap: 10px; }
-#slide-06 .doc-line { height: 16px; background: #dfe3ea; border-radius: 4px; }
-#slide-06 .doc-line.w80 { width: 80%; }
-#slide-06 .doc-line.w60 { width: 60%; }
-#slide-06 .doc-line.w95 { width: 95%; }
-/* === slide-10-ia-tree.html === */
-#slide-07 .subtitle {
-    position: absolute;
-    top: 160px;
-    left: 90px;
-    font-size: 24px;
-    color: var(--sub);
-  }
-#slide-07 .tree {
-    position: absolute;
-    top: 240px;
-    left: 90px;
-    width: 1740px;
-    height: 720px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-  }
-#slide-07 .node { padding: 22px 24px; }
-#slide-07 .node .h { font-size: 21px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
-#slide-07 .node ul { list-style: none; font-size: 16px; color: var(--sub); line-height: 1.7; }
-#slide-07 .node ul li:before { content: "· "; }
-#slide-07 .p1 { color: var(--amber); font-weight: 700; }
-#slide-07 .root { grid-column: 1 / 5; background: var(--navy); color: #fff; border-radius: 16px; padding: 20px 28px; font-size: 22px; font-weight: 800; text-align: center; }
+#slide-03 .goal-line { margin-top: 20px; font-size: 20px; font-weight: 600; color: var(--ink); background: #f4f6f9; border-radius: 999px; padding: 20px 28px; text-align: center; }
+#slide-03 .right-col { position: absolute; top: 60px; left: 850px; width: 780px; height: 620px; display: flex; flex-direction: column; gap: 18px; }
+#slide-03 .stat-row { display: flex; gap: 18px; flex: 1; }
+#slide-03 .stat { flex: 1; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+#slide-03 .stat .num { font-size: 40px; font-weight: 900; color: var(--blue); }
+#slide-03 .stat .label { font-size: 16px; color: var(--sub); margin-top: 8px; }
+#slide-03 .stat .sub { font-size: 13px; color: #9aa4b2; margin-top: 4px; }
+#slide-03 .effect { background: #f4f6f9; border-radius: 20px; padding: 24px 28px; }
+#slide-03 .effect .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+#slide-03 .effect ul { list-style: none; font-size: 15px; color: var(--sub); line-height: 1.7; }
+#slide-03 .effect ul li:before { content: "· "; }
+
+/* === slide-04 strategy === */
+#slide-04 .headline { position: absolute; top: 100px; left: 115px; width: 1460px; font-size: 34px; font-weight: 700; color: var(--body); line-height: 1.4; }
+#slide-04 .headline b { color: var(--blue); font-weight: 800; }
+#slide-04 .track { position: absolute; top: 260px; left: 155px; width: 1610px; height: 180px; background: var(--blue-light); border-radius: 90px; display: flex; align-items: center; justify-content: space-around; padding: 0 60px; }
+#slide-04 .step { width: 420px; height: 130px; background: #fff; border-radius: 65px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+#slide-04 .step .icon { font-size: 34px; color: var(--blue); }
+#slide-04 .step .name { font-size: 26px; font-weight: 800; color: var(--ink); }
+#slide-04 .connectors { position: absolute; top: 440px; left: 155px; width: 1610px; height: 60px; }
+#slide-04 .connectors .line { position: absolute; top: 0; width: 1px; height: 60px; background: var(--line); }
+#slide-04 .connectors .line.c1 { left: 265px; }
+#slide-04 .connectors .line.c2 { left: 805px; }
+#slide-04 .connectors .line.c3 { left: 1345px; }
+#slide-04 .descs { position: absolute; top: 500px; left: 155px; width: 1610px; height: 380px; display: flex; justify-content: space-around; }
+#slide-04 .desc { width: 460px; }
+#slide-04 .desc .t { font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 14px; text-align: center; }
+#slide-04 .desc ul { list-style: none; font-size: 16px; color: var(--sub); line-height: 1.9; }
+#slide-04 .desc ul li:before { content: "· "; }
+
+/* === slide-05 plan === */
+#slide-05 .visual { position: absolute; top: 60px; left: 60px; width: 700px; height: 600px; border-radius: 28px; background: linear-gradient(160deg, var(--blue-light) 0%, var(--blue-chart) 100%); display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); gap: 3px; padding: 3px; overflow: hidden; }
+#slide-05 .visual .cell { background: rgba(255,255,255,0.55); }
+#slide-05 .visual .cell.on { background: var(--blue); opacity: .8; }
+#slide-05 .brand-tag { position: absolute; top: 610px; left: 490px; background: var(--blue); color: #fff; font-size: 18px; font-weight: 800; padding: 14px 26px; border-radius: 999px; display: flex; align-items: center; gap: 8px; }
+#slide-05 .brand-tag img { height: 20px; }
+#slide-05 .right { position: absolute; top: 60px; left: 820px; width: 810px; height: 600px; }
+#slide-05 .right .title { font-size: 42px; font-weight: 800; color: var(--ink); line-height: 1.35; }
+#slide-05 .right .title b { color: var(--blue); }
+#slide-05 .right .rule { height: 2px; background: var(--line-strong); width: 100%; margin: 26px 0 28px; }
+#slide-05 .right .desc { font-size: 22px; color: var(--body); line-height: 1.6; margin-bottom: 28px; }
+#slide-05 .right ul { list-style: none; }
+#slide-05 .right ul li { font-size: 19px; color: var(--sub); line-height: 2; }
+#slide-05 .right ul li:before { content: "● "; color: var(--ink); font-size: 10px; }
+#slide-05 .timeline { position: absolute; top: 690px; left: 60px; width: 1570px; display: flex; align-items: center; gap: 10px; }
+#slide-05 .timeline .pt { flex: 1; text-align: center; }
+#slide-05 .timeline .pt .d { font-size: 13px; font-weight: 700; color: var(--blue); }
+#slide-05 .timeline .pt .l { font-size: 13px; color: var(--sub); margin-top: 4px; }
+#slide-05 .timeline .sep { width: 30px; height: 1px; background: var(--line); }
+
+/* === slide-06 stack === */
+#slide-06 .icon { position: absolute; top: 44px; left: 0; width: 100%; text-align: center; font-size: 40px; color: var(--blue); }
+#slide-06 .message { position: absolute; top: 104px; left: 0; width: 100%; text-align: center; font-size: 26px; font-weight: 700; color: var(--body); }
+#slide-06 .message b { color: var(--blue); }
+#slide-06 .hr { position: absolute; top: 172px; left: 60px; width: 1570px; height: 1px; background: var(--line); }
+#slide-06 .rows { position: absolute; top: 208px; left: 60px; width: 1570px; display: flex; flex-direction: column; gap: 22px; }
+#slide-06 .row { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; }
+#slide-06 .foot { position: absolute; top: 660px; left: 60px; width: 1570px; display: flex; gap: 18px; }
+#slide-06 .foot .item { flex: 1; background: #f4f6f9; border-radius: 16px; padding: 20px 24px; }
+#slide-06 .foot .item .k { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 6px; }
+#slide-06 .foot .item .v { font-size: 15px; color: var(--sub); }
+
+/* === slide-07 design === */
+#slide-07 .row1, #slide-07 .row2 { position: absolute; left: 60px; width: 1570px; display: flex; gap: 40px; }
+#slide-07 .row1 { top: 60px; height: 280px; }
+#slide-07 .row2 { top: 380px; height: 280px; justify-content: center; }
+#slide-07 .item { width: 490px; padding: 40px 40px; display: flex; flex-direction: column; justify-content: space-between; }
+#slide-07 .item .t { font-size: 26px; font-weight: 800; color: var(--ink); line-height: 1.4; }
+#slide-07 .item .d { font-size: 17px; color: var(--sub); line-height: 1.6; margin-top: 14px; }
+#slide-07 .item .icon { align-self: flex-end; font-size: 44px; color: var(--blue); }
+
+/* === slide-08 verify === */
+#slide-08 .venn { position: absolute; top: 100px; left: 60px; width: 700px; height: 600px; }
+#slide-08 .circle { position: absolute; width: 340px; height: 340px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; mix-blend-mode: multiply; }
+#slide-08 .circle .k { font-size: 22px; font-weight: 800; color: var(--ink); }
+#slide-08 .circle .s { font-size: 15px; color: var(--sub); margin-top: 6px; }
+#slide-08 .c1 { left: 180px; top: 20px; background: rgba(80,155,248,0.35); z-index: 1; }
+#slide-08 .c2 { left: 20px; top: 260px; background: rgba(80,155,248,0.35); z-index: 2; }
+#slide-08 .c3 { left: 340px; top: 260px; background: rgba(80,155,248,0.35); z-index: 3; }
+#slide-08 .list { position: absolute; top: 60px; left: 820px; width: 810px; height: 680px; display: flex; flex-direction: column; justify-content: space-between; }
+#slide-08 .li { display: flex; gap: 20px; }
+#slide-08 .li .n { font-size: 26px; font-weight: 900; color: var(--blue); flex-shrink: 0; width: 34px; }
+#slide-08 .li .body .t { font-size: 21px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+#slide-08 .li .body .d { font-size: 16px; color: var(--sub); line-height: 1.6; }
+
+/* === slide-09 architecture === */
+#slide-09 .message { position: absolute; top: 44px; left: 60px; width: 1570px; text-align: center; font-size: 26px; font-weight: 700; color: var(--body); }
+#slide-09 .message b { color: var(--blue); }
+#slide-09 .node { position: absolute; border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8px; }
+#slide-09 .node.main { background: var(--blue); color: #fff; }
+#slide-09 .node.main .t { font-size: 19px; font-weight: 800; }
+#slide-09 .node.sub { background: var(--blue-light); color: var(--ink); }
+#slide-09 .node.sub .t { font-size: 15px; font-weight: 700; }
+#slide-09 .node .s { font-size: 12px; margin-top: 4px; opacity: .85; }
+#slide-09 .line { position: absolute; background: var(--blue-line); }
+
+/* === slide-10 ia-flow === */
+#slide-10 .subtitle { position: absolute; top: 176px; left: 200px; width: 1500px; font-size: 22px; font-weight: 500; color: var(--sub); }
+#slide-10 .divider { position: absolute; top: 60px; left: 560px; width: 1px; height: 640px; background: var(--line); }
+#slide-10 .ia { position: absolute; top: 60px; left: 60px; width: 460px; height: 640px; }
+#slide-10 .ia .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 18px; }
+#slide-10 .ia .item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid #eee; font-size: 18px; color: var(--body); }
+#slide-10 .ia .item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+#slide-10 .ia .item b { font-weight: 800; color: var(--ink); }
+#slide-10 .flow { position: absolute; top: 60px; left: 600px; width: 1030px; }
+#slide-10 .flow .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 18px; }
+#slide-10 .flow .steps { display: flex; flex-wrap: wrap; gap: 12px; }
+#slide-10 .flow .step { background: var(--blue-light); color: var(--ink); font-size: 15px; font-weight: 700; padding: 12px 18px; border-radius: 999px; }
+#slide-10 .flow .arrow { color: var(--blue-line); font-size: 16px; align-self: center; }
+#slide-10 .highlight { position: absolute; top: 320px; left: 600px; width: 1030px; display: flex; gap: 24px; }
+#slide-10 .highlight .card { flex: 1; padding: 26px 28px; }
+#slide-10 .highlight .card .n { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 8px; }
+#slide-10 .highlight .card .t { font-size: 19px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+#slide-10 .highlight .card .d { font-size: 14px; color: var(--sub); line-height: 1.6; }
+
+/* === slide-11 erd === */
+#slide-11 .subtitle { position: absolute; top: 176px; left: 200px; width: 1500px; font-size: 22px; font-weight: 500; color: var(--sub); }
+#slide-11 .divider { position: absolute; top: 60px; left: 1130px; width: 1px; height: 640px; background: var(--line); }
+#slide-11 .erd { position: absolute; top: 60px; left: 60px; width: 1020px; height: 640px; display: flex; flex-direction: column; justify-content: space-around; }
+#slide-11 .erow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+#slide-11 .ent { background: var(--blue-light); color: var(--ink); font-size: 15px; font-weight: 700; padding: 12px 18px; border-radius: 12px; }
+#slide-11 .ent.strong { background: var(--blue); color: #fff; }
+#slide-11 .rel { font-size: 13px; color: var(--sub); }
+#slide-11 .principles { position: absolute; top: 60px; left: 1170px; width: 460px; height: 640px; display: flex; flex-direction: column; justify-content: space-between; }
+#slide-11 .principles .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+#slide-11 .principles .li { display: flex; gap: 16px; margin-bottom: 22px; }
+#slide-11 .principles .li .n { font-size: 22px; font-weight: 900; color: var(--blue); flex-shrink: 0; }
+#slide-11 .principles .li .t { font-size: 16px; color: var(--body); line-height: 1.6; }
+#slide-11 .highlight-box { background: #f4f6f9; border-radius: 16px; padding: 24px 26px; }
+#slide-11 .highlight-box .t { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+#slide-11 .highlight-box ul { list-style: none; font-size: 14px; color: var(--sub); line-height: 1.7; }
+#slide-11 .highlight-box ul li:before { content: "· "; }
+#slide-11 .highlight-box b { color: var(--blue); }
+
+/* === slide-12 api === */
+#slide-12 .message { position: absolute; top: 44px; left: 60px; width: 1570px; text-align: center; font-size: 24px; font-weight: 700; color: var(--body); }
+#slide-12 .message b { color: var(--blue); }
+#slide-12 .divider { position: absolute; top: 100px; left: 850px; width: 1px; height: 600px; background: var(--line); }
+#slide-12 .rest { position: absolute; top: 100px; left: 60px; width: 760px; height: 600px; }
+#slide-12 .rest .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 14px; }
+#slide-12 .rest .row { display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #eee; }
+#slide-12 .method { font-size: 12px; font-weight: 800; color: #fff; background: #9aa4b2; padding: 4px 10px; border-radius: 6px; width: 52px; text-align: center; flex-shrink: 0; }
+#slide-12 .method.post { background: var(--blue); }
+#slide-12 .method.get { background: #4CAF7D; }
+#slide-12 .method.patch { background: #C79A2E; }
+#slide-12 .method.ws { background: #7A5FD1; }
+#slide-12 .path { font-size: 14px; color: var(--body); font-family: monospace; }
+#slide-12 .row.strong .path { color: var(--ink); font-weight: 700; }
+#slide-12 .ai { position: absolute; top: 100px; left: 890px; width: 740px; }
+#slide-12 .ai .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 14px; }
+#slide-12 .ai .row { padding: 12px 0; border-bottom: 1px solid #eee; }
+#slide-12 .ai .row .path { font-size: 15px; font-weight: 800; color: var(--blue); font-family: monospace; }
+#slide-12 .ai .row .d { font-size: 14px; color: var(--sub); margin-top: 4px; }
+#slide-12 .resp { position: absolute; top: 400px; left: 890px; width: 740px; }
+#slide-12 .resp .h { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+#slide-12 .resp pre { background: #1A1A1A; color: #eaf4ff; font-size: 14px; padding: 18px 22px; border-radius: 14px; line-height: 1.6; }
+#slide-12 .note { position: absolute; top: 590px; left: 890px; width: 740px; font-size: 14px; color: var(--sub); background: #f4f6f9; border-radius: 14px; padding: 16px 20px; }
 </style>
 </head>
 <body style="background:#e4e7ec; width:auto; height:auto; overflow:visible; padding:40px 0;">
+
 <section id="slide-01" class="deck-page">
 <div class="slide">
-  <div class="deco-ring"></div>
-  <div class="deco-ring small"></div>
-
-  <div class="top-tag">HAJACHECK KICK-OFF</div>
-  <div class="wordmark">haja<span>Check</span></div>
-  <div class="subtitle">AI 기반 시설물 외관 하자 점검 플랫폼</div>
-  <div class="report-label">인공지능개발 양성과정_킥오프 보고서</div>
-
+  <div class="top-bar">
+    <div class="date-tag">2026.07.14</div>
+    <div class="top-title">AI 기반 시설물 외관 하자 점검 플랫폼</div>
+  </div>
+  <div class="brand-logo">
+    <img src="../icon/LOGO-removebg.png" alt="HajaCheck logo">
+    <span>HAJACHECK</span>
+  </div>
+  <div class="wordmark">HajaCheck</div>
+  <div class="subtitle">착수보고서</div>
   <div class="meta">
-    <div>발표일 &nbsp;<b>2026.07.14</b></div>
-    <div>PM &nbsp;<b>김승현</b> &nbsp;·&nbsp; 팀원 &nbsp;<b>김관영·정재봉·오영석·이은석·허남·유병현·황승현</b> (총 8인)</div>
+    <span>PM &nbsp;<b>김승현</b></span>
+    <span class="sep">|</span>
+    <span>팀원 &nbsp;<b>김관영·오영석·이은석·허남·유병현·정재봉·황승현</b></span>
+    <div class="rule"></div>
   </div>
 </div>
 </section>
+
 <section id="slide-02" class="deck-page">
 <div class="slide">
-  <div class="brand">haja<span>Check</span></div>
-  <div class="toc-label">CONTENTS</div>
-
-  <div class="grid">
-    <div class="chapter card">
-      <div class="num">01</div>
-      <div class="title">프로젝트 소개</div>
-      <div class="sub">팀 소개 / 프로젝트 개요<br>추진 배경 및 목표 / 기대 효과</div>
-    </div>
-    <div class="chapter card">
-      <div class="num">02</div>
-      <div class="title">서비스 전략</div>
-      <div class="sub">타겟층 분석 및 MVP 범위<br>벤치마킹 및 핵심 차별점</div>
-    </div>
-    <div class="chapter card">
-      <div class="num">03</div>
-      <div class="title">수행 계획</div>
-      <div class="sub">역할 분담 및 협업 프로세스<br>일정 계획 및 리스크 대응</div>
-    </div>
-    <div class="chapter card">
-      <div class="num">04</div>
-      <div class="title">개발 환경 및 아키텍처</div>
-      <div class="sub">기술 스택 및 개발 환경<br>시스템 아키텍처 / AI 처리 흐름</div>
-    </div>
-    <div class="chapter card">
-      <div class="num">05</div>
-      <div class="title">서비스 설계</div>
-      <div class="sub">요구사항·기능·정책 정의서 / 메뉴 구조도<br>업무 흐름도 · 화면 설계 · API · ERD</div>
-    </div>
-    <div class="chapter card">
-      <div class="num">06</div>
-      <div class="title">검증 및 마무리</div>
-      <div class="sub">KPI 및 테스트 검증 계획<br>최종 산출물 / 오픈 이슈</div>
-    </div>
+  <div class="brand-logo">
+    <img src="../icon/LOGO-removebg.png" alt="HajaCheck logo">
+    <span>HAJACHECK</span>
   </div>
-
+  <div class="toc-label">CONTENTS</div>
+  <div class="grid">
+    <div class="chapter"><div class="num">01</div><div class="body"><div class="title">프로젝트 소개</div><div class="sub">팀 소개 / 프로젝트 개요<br>추진 배경 및 목표 / 기대 효과</div></div></div>
+    <div class="chapter"><div class="num">02</div><div class="body"><div class="title">서비스 전략</div><div class="sub">타겟층 분석 및 MVP 범위<br>벤치마킹 및 핵심 차별점</div></div></div>
+    <div class="chapter"><div class="num">03</div><div class="body"><div class="title">수행 계획</div><div class="sub">역할 분담 및 협업 프로세스<br>일정 계획 및 리스크 대응</div></div></div>
+    <div class="chapter"><div class="num">04</div><div class="body"><div class="title">개발 환경 및 아키텍처</div><div class="sub">기술 스택 및 개발 환경<br>시스템 아키텍처 / AI 처리 흐름</div></div></div>
+    <div class="chapter"><div class="num">05</div><div class="body"><div class="title">서비스 설계</div><div class="sub">요구사항·기능·정책 정의서 / 메뉴 구조도<br>업무 흐름도 · 화면 설계 · API · ERD</div></div></div>
+    <div class="chapter"><div class="num">06</div><div class="body"><div class="title">검증 및 마무리</div><div class="sub">KPI 및 테스트 검증 계획<br>최종 산출물 / 오픈 이슈</div></div></div>
+  </div>
   <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
   <div class="page-num">2</div>
 </div>
 </section>
+
 <section id="slide-03" class="deck-page">
 <div class="slide">
   <div class="chapter-num">01</div>
   <div class="slide-title">프로젝트 소개</div>
-  <div class="subtitle">건물 외벽·교량 등 시설물 하자를 AI로 자동 탐지·보고하는 점검 지원 플랫폼</div>
-
-  <div class="compare">
-    <div class="col before card">
-      <div class="tag">BEFORE</div>
-      <div class="headline">사람이 직접 점검</div>
-      <ul>
-        <li>추락 위험 · 고비용 · 장시간 소요</li>
-        <li>점검자 숙련도에 따라 판독 편차</li>
-        <li>점검 이력이 체계적으로 축적 안 됨</li>
-      </ul>
-    </div>
-    <div class="arrow">→</div>
-    <div class="col after card">
-      <div class="tag">AFTER · hajaCheck</div>
-      <div class="headline">AI 자동 탐지</div>
-      <ul>
-        <li>이미지 업로드만으로 하자 자동 탐지</li>
-        <li>일관된 기준의 등급·보고서 생성</li>
-        <li>점검 이력 축적 · 회차 간 비교</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="stats">
-    <div class="stat-row">
-      <div class="stat card">
-        <div class="num">8명</div>
-        <div class="label">팀 구성 (PM 1 · PL 1 · 팀원 6)</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="subtitle">고위험·고비용의 육안 점검을 AI 탐지와 보고서 자동화로 <b style="color:var(--blue)">보조</b>합니다</div>
+  <div class="content-card">
+    <div class="divider"></div>
+    <div class="left-col">
+      <div class="badge team-tag">팀 소개</div>
+      <div class="team-line">팀명 <b>HajaCheck</b> · PM/PL 포함 <b>8명</b><br>시설물 점검 업무를 AI로 보조하는 풀스택 개발팀</div>
+      <div class="compare">
+        <div class="col before">
+          <div class="tag">문제 배경</div>
+          <div class="headline">사람이 직접 점검</div>
+          <ul><li>추락 위험 · 장시간 소요</li><li>숙련도에 따른 판독 편차</li><li>점검 이력 축적 미흡</li></ul>
+        </div>
+        <div class="col after">
+          <div class="tag">솔루션 · HajaCheck</div>
+          <div class="headline">AI 자동 탐지</div>
+          <ul><li>이미지·영상 업로드 → 자동 탐지</li><li>오버레이 검수 + LLM 보고서 초안</li><li>RAG 기반 점검 기준 Q&amp;A</li></ul>
+        </div>
       </div>
-      <div class="stat card">
-        <div class="num">4주</div>
-        <div class="label">2026.07.09 ~ 08.07</div>
-      </div>
+      <div class="goal-line">업로드 → 탐지 → 검수 → 보고서</div>
     </div>
-    <div class="stat-row">
-      <div class="stat card">
-        <div class="num">mAP 0.7↑</div>
-        <div class="label">균열 탐지 성능 목표 (§9 KPI)</div>
+    <div class="right-col">
+      <div class="stat-row">
+        <div class="stat card"><div class="num">8명</div><div class="label">팀 구성</div><div class="sub">PM · PL · 메뉴 오너 · 기술 챕터</div></div>
+        <div class="stat card"><div class="num">4주</div><div class="label">E2E 데모 완성 기한</div></div>
       </div>
-      <div class="stat card">
-        <div class="num">10분</div>
-        <div class="label">이미지 100장 → 보고서 초안</div>
+      <div class="stat-row">
+        <div class="stat card"><div class="num">mAP 0.7↑</div><div class="label">균열 탐지 성능 목표</div></div>
+        <div class="stat card"><div class="num">10분</div><div class="label">100장 → 보고서 초안</div></div>
+      </div>
+      <div class="effect">
+        <div class="h">기대 효과</div>
+        <ul><li>판독 시간 단축과 하자 누락 감소</li><li>점검 이력 축적을 통한 상태 추적</li><li>보고서 작성 부담 완화</li></ul>
       </div>
     </div>
   </div>
-
-  <div class="callouts">
-    <div class="callout card">
-      <div class="badge">문제 정의</div>
-      <div class="text">추락 위험 · 고비용 · 판독 편차 — 사람이 직접 점검하기 어려운 구조</div>
-    </div>
-    <div class="callout card">
-      <div class="badge">시장성 검증</div>
-      <div class="text">국내외 상용화 서비스 존재 (뷰메진 VODA, Inspekt AI 등) — 이미 검증된 시장</div>
-    </div>
-  </div>
-
   <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
   <div class="page-num">3</div>
 </div>
 </section>
+
 <section id="slide-04" class="deck-page">
+<div class="slide">
+  <div class="chapter-num">02</div>
+  <div class="slide-title">서비스 전략</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="headline">점검 업무의 핵심 흐름을 MVP로 묶고, AI 탐지·보고서·상담을 <b>하나의 플랫폼</b>에서 제공합니다</div>
+    <div class="track">
+      <div class="step"><div class="icon">👤</div><div class="name">타겟층 분석</div></div>
+      <div class="step"><div class="icon">📦</div><div class="name">MVP 범위</div></div>
+      <div class="step"><div class="icon">🔍</div><div class="name">벤치마킹·차별점</div></div>
+    </div>
+    <div class="connectors"><div class="line c1"></div><div class="line c2"></div><div class="line c3"></div></div>
+    <div class="descs">
+      <div class="desc"><div class="t">타겟층 분석</div><ul><li>안전점검 기술자 · 시설물 관리자</li><li>점검 책임자 · 서비스 관리자</li><li>4개 역할별 사용 흐름 정의</li></ul></div>
+      <div class="desc"><div class="t">MVP 범위</div><ul><li>업로드 → AI 탐지 → 시각화·검수</li><li>LLM 보고서 → RAG Q&amp;A → 상담원 연결</li><li>P0: 로그인·업로드·탐지·보고서·관리자</li></ul></div>
+      <div class="desc"><div class="t">벤치마킹·차별점</div><ul><li>VODA · Inspekt AI · FMS 등 참고</li><li>AI 탐지+LLM 보고서+RAG 상담 통합</li><li>휴먼 검수 기반 오탐 보정</li></ul></div>
+    </div>
+  </div>
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">4</div>
+</div>
+</section>
+
+<section id="slide-05" class="deck-page">
 <div class="slide">
   <div class="chapter-num">03</div>
   <div class="slide-title">수행 계획</div>
-
-  <div class="hero">메뉴(도메인) 단위 배정 + <span>풀스택 챕터제</span> — 전원이 화면부터 서버까지 직접 구현</div>
-
-  <div class="rows">
-    <div class="row card">
-      <div class="idx">1</div>
-      <div class="body">
-        <div class="title">역할 분담</div>
-        <div class="desc">9개 메뉴/도메인 단위 배정(기능 축) × 9개 기술 챕터(관심사 축) 매트릭스 교차 운영 — 김관영은 <b>랜딩·보고서·지도 뷰(챕터8 주담당)</b>, 데이터 챕터(챕터2)는 유병현 주담당</div>
-      </div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="visual">
+      <div class="cell on"></div><div class="cell"></div><div class="cell"></div><div class="cell on"></div>
+      <div class="cell"></div><div class="cell on"></div><div class="cell"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell on"></div><div class="cell"></div>
+      <div class="cell on"></div><div class="cell"></div><div class="cell"></div><div class="cell on"></div>
     </div>
-    <div class="row card">
-      <div class="idx">2</div>
-      <div class="body">
-        <div class="title">협업 프로세스</div>
-        <div class="desc"><b>Jira</b>(스프린트 백로그·이슈 트래킹) + <b>Slack</b>(비동기 소통) — PR 리뷰 상시 운영, main 직접 푸시 금지, 부담당 승인 + CI 통과 후 머지, 주 1회 팀 코드 리뷰(①~④)</div>
-      </div>
+    <div class="brand-tag"><img src="../icon/LOGO-removebg.png" alt="logo">HAJACHECK</div>
+    <div class="right">
+      <div class="title">메뉴 단위 오너십<br>+ <b>풀스택 챕터제</b></div>
+      <div class="rule"></div>
+      <div class="desc">메뉴 오너가 화면·서버·AI 연동까지 직접 구현하고, 기술 챕터 오너는 표준과 리뷰로 교차 지원합니다.</div>
+      <ul>
+        <li>전원이 React·Spring Boot·AI 연동을 직접 경험</li>
+        <li>PR 리뷰 필수 + 주 1회 팀 코드 리뷰</li>
+        <li>핵심 리스크는 Contract-First와 워킹 스켈레톤으로 조기 대응</li>
+      </ul>
     </div>
-    <div class="row card">
-      <div class="idx">3</div>
-      <div class="body">
-        <div class="title">일정 계획 &amp; 리스크</div>
-        <div class="desc">착수보고 <b>7/14</b> → 중간보고 <b>7/31</b> → 완료보고 <b>8/7</b>. 핵심 리스크: <b>학습 데이터 부족</b>(AI Hub 공개 데이터셋 우선 확보) · <b>Spring↔FastAPI 연동 지연</b>(Contract-First OpenAPI + 스프린트1 말 워킹 스켈레톤 관통)</div>
-      </div>
+    <div class="timeline">
+      <div class="pt"><div class="d">7.9~13</div><div class="l">착수보고 초안</div></div><div class="sep"></div>
+      <div class="pt"><div class="d">7.14</div><div class="l">착수보고</div></div><div class="sep"></div>
+      <div class="pt"><div class="d">7.15~19</div><div class="l">스프린트1</div></div><div class="sep"></div>
+      <div class="pt"><div class="d">7.21~29</div><div class="l">스프린트2</div></div><div class="sep"></div>
+      <div class="pt"><div class="d">7.31</div><div class="l">중간보고</div></div><div class="sep"></div>
+      <div class="pt"><div class="d">8.3~6</div><div class="l">사용자 테스트</div></div><div class="sep"></div>
+      <div class="pt"><div class="d">8.7</div><div class="l">완료보고</div></div>
     </div>
   </div>
-
   <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
   <div class="page-num">5</div>
 </div>
 </section>
-<section id="slide-05" class="deck-page">
+
+<section id="slide-06" class="deck-page">
+<div class="slide">
+  <div class="chapter-num">04</div>
+  <div class="slide-title">개발 환경 및 아키텍처</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="icon">🧩</div>
+    <div class="message">React·Spring Boot·FastAPI를 중심으로 <b>탐지, 생성, 검색</b> 기능을 분리해 구현합니다</div>
+    <div class="hr"></div>
+    <div class="rows">
+      <div class="row">
+        <span class="chip on">✓ React 18 + Vite</span><span class="chip on">✓ Spring Boot 3.x</span><span class="chip off">+ JDK 17</span><span class="chip on">✓ FastAPI</span>
+      </div>
+      <div class="row">
+        <span class="chip off">+ PostgreSQL</span><span class="chip off">+ Redis</span><span class="chip on">✓ YOLOv8-seg</span><span class="chip off">+ ONNX Runtime</span><span class="chip off">+ LangChain</span>
+      </div>
+      <div class="row">
+        <span class="chip off">+ Qwen3-8B</span><span class="chip off">+ Chroma</span><span class="chip off">+ OCI Ampere A1</span><span class="chip off">+ Nginx</span><span class="chip off">+ GitHub Actions</span>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="item"><div class="k">Frontend</div><div class="v">React SPA</div></div>
+      <div class="item"><div class="k">Backend</div><div class="v">Spring Boot 모듈러 모놀리스</div></div>
+      <div class="item"><div class="k">AI Server</div><div class="v">FastAPI 기반 탐지·LLM·RAG</div></div>
+      <div class="item"><div class="k">Infra</div><div class="v">OCI VM + Nginx + systemd + GitHub Actions</div></div>
+    </div>
+  </div>
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">6</div>
+</div>
+</section>
+
+<section id="slide-07" class="deck-page">
+<div class="slide">
+  <div class="chapter-num">05</div>
+  <div class="slide-title">서비스 설계</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="row1">
+      <div class="item card"><div><div class="t">요구사항 정의</div><div class="d">P0/P1/P2 범위와 사용자 역할 기준 정리</div></div><div class="icon">📋</div></div>
+      <div class="item card"><div><div class="t">기능 정의</div><div class="d">FR-1~FR-9 핵심 기능과 처리 흐름 정의</div></div><div class="icon">⚙️</div></div>
+      <div class="item card"><div><div class="t">정책 정의</div><div class="d">권한, 플랜 쿼터, 심각도 등급, 상태머신 기준</div></div><div class="icon">🔐</div></div>
+    </div>
+    <div class="row2">
+      <div class="item card"><div><div class="t">IA·화면 설계</div><div class="d">메뉴 구조와 핵심 화면 흐름 정리</div></div><div class="icon">🗺️</div></div>
+      <div class="item card"><div><div class="t">API·ERD 설계</div><div class="d">Contract-First 기반 API 계약과 데이터 모델 정의</div></div><div class="icon">🔗</div></div>
+    </div>
+  </div>
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">7</div>
+</div>
+</section>
+
+<section id="slide-08" class="deck-page">
 <div class="slide">
   <div class="chapter-num">06</div>
   <div class="slide-title">검증 및 마무리</div>
-
-  <div class="cols">
-    <div class="col card">
-      <div class="idx">1</div>
-      <div class="title">KPI</div>
-      <ul>
-        <li>균열 탐지 <b>mAP@0.5 ≥ 0.7</b></li>
-        <li>이미지 100장 → 보고서 <b>10분 이내</b></li>
-        <li>시연 시나리오 <b>무결점 완주</b></li>
-        <li>챗봇 답변 <b>출처 표기율 100%</b></li>
-      </ul>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="venn">
+      <div class="circle c1"><div class="k">KPI</div><div class="s">mAP / 처리시간 / E2E</div></div>
+      <div class="circle c2"><div class="k">최종 산출물</div><div class="s">PRD / 화면 / API / ERD</div></div>
+      <div class="circle c3"><div class="k">오픈 이슈</div><div class="s">클래스 / 예산 / 등급</div></div>
     </div>
-    <div class="col card">
-      <div class="idx">2</div>
-      <div class="title">최종 산출물</div>
-      <ul>
-        <li>요구사항·기능·정책 정의서</li>
-        <li>화면 설계서 / IA 트리</li>
-        <li>ERD · API 명세(OpenAPI)</li>
-        <li>PRD_hajaCheck (v0.41)</li>
-      </ul>
-    </div>
-    <div class="col card">
-      <div class="idx">3</div>
-      <div class="title">오픈 이슈 (팀 확정 필요)</div>
-      <ul>
-        <li>탐지 클래스 최종 범위</li>
-        <li>HF 계정 정책 / 예산 한도</li>
-        <li>심각도 등급 체계 (A~E 안)</li>
-        <li>상담원 역할 수행 주체</li>
-      </ul>
+    <div class="list">
+      <div class="li"><div class="n">1</div><div class="body"><div class="t">KPI 목표 달성 전략</div><div class="d">탐지 성능 mAP@0.5 0.7 이상, 이미지 100장 기준 10분 이내, E2E 시연 무결점 완주, 챗봇 출처 표기율 100%를 검증 기준으로 둡니다.</div></div></div>
+      <div class="li"><div class="n">2</div><div class="body"><div class="t">최종 산출물 체크리스트</div><div class="d">PRD, 요구사항·기능·정책 정의서, 화면설계서, IA 트리, ERD, API 명세, 코드 컨벤션 문서를 단계별로 제출합니다.</div></div></div>
+      <div class="li"><div class="n">3</div><div class="body"><div class="t">핵심 리스크 대응</div><div class="d">학습 데이터 부족은 공개 데이터셋과 클래스 축소로 대응하고, Spring-FastAPI 연동 지연은 Contract-First와 워킹 스켈레톤으로 조기 검증합니다.</div></div></div>
+      <div class="li"><div class="n">4</div><div class="body"><div class="t">오픈 이슈 및 Q&amp;A</div><div class="d">탐지 클래스, HF 계정·예산, 심각도 등급, 상담원 역할, 챗봇 시나리오를 1차 멘토링 전 확정하고 마지막은 Q&amp;A로 마무리합니다.</div></div></div>
     </div>
   </div>
-
-  <div class="badges">
-    <span class="label">리스크 대응 키워드</span>
-    <span class="badge">데이터셋 확보</span>
-    <span class="badge">Contract-First(OpenAPI)</span>
-    <span class="badge">OAuth 사전 등록</span>
-  </div>
-
   <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
   <div class="page-num">8</div>
-  <div class="qna">Q&amp;A</div>
 </div>
 </section>
-<section id="slide-06" class="deck-page">
-<div class="slide">
-  <div class="chapter-num">추가</div>
-  <div class="slide-title">화면설계 목업 — 핵심 화면 3종</div>
-  <div class="subtitle">§5 서비스 설계 다이어그램류(와이어프레임) — 시연 임팩트가 큰 3개 화면만 선별</div>
 
-  <div class="screens">
-    <div class="screen card">
-      <div class="name">① 분석 결과 뷰어</div>
-      <div class="mock">
-        <div class="bar short"></div>
-        <div class="thumb-grid">
-          <div class="thumb c1"><div class="box"></div></div>
-          <div class="thumb c2"><div class="box"></div></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb c1"><div class="box"></div></div>
-          <div class="thumb"></div>
-        </div>
-        <div class="bar blue"></div>
-      </div>
-    </div>
-    <div class="screen card">
-      <div class="name">② 대시보드</div>
-      <div class="mock">
-        <div class="kpi-row">
-          <div class="kpi"></div><div class="kpi"></div><div class="kpi"></div>
-        </div>
-        <div class="chart">
-          <div class="b" style="left:5%;height:40%;"></div>
-          <div class="b" style="left:22%;height:65%;"></div>
-          <div class="b" style="left:39%;height:30%;"></div>
-          <div class="b" style="left:56%;height:80%;"></div>
-          <div class="b" style="left:73%;height:50%;"></div>
-        </div>
-        <div class="bar"></div>
-      </div>
-    </div>
-    <div class="screen card">
-      <div class="name">③ 보고서</div>
-      <div class="mock">
-        <div class="bar short"></div>
-        <div class="doc-lines">
-          <div class="doc-line w95"></div>
-          <div class="doc-line w80"></div>
-          <div class="doc-line w60"></div>
-          <div class="doc-line w95"></div>
-          <div class="doc-line w80"></div>
-        </div>
-        <div class="bar blue"></div>
+<section id="slide-09" class="deck-page">
+<div class="slide">
+  <div class="chapter-num">07</div>
+  <div class="slide-title">시스템 아키텍처 구조도</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="message">Spring Boot는 <b>업무 API</b>를 담당하고, FastAPI는 <b>AI 탐지·보고서·RAG 처리</b>를 담당합니다</div>
+    <div class="node main" style="left:65px;top:150px;width:250px;height:100px;"><div class="t">사용자 브라우저</div><div class="s">React SPA</div></div>
+    <div class="node main" style="left:365px;top:150px;width:250px;height:100px;"><div class="t">Nginx</div><div class="s">정적 서빙 / 리버스 프록시</div></div>
+    <div class="node main" style="left:665px;top:150px;width:290px;height:100px;"><div class="t">Spring Boot</div><div class="s">업무 API / 인증 / 상담</div></div>
+    <div class="node main" style="left:1005px;top:150px;width:290px;height:100px;"><div class="t">FastAPI</div><div class="s">AI 내부 API</div></div>
+    <div class="node main" style="left:1345px;top:150px;width:260px;height:100px;"><div class="t">파일 스토리지</div><div class="s">원본 / 썸네일 / 오버레이</div></div>
+    <div class="line" style="left:315px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:615px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:955px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:1295px;top:198px;width:50px;height:2px;"></div>
+    <div class="line" style="left:809px;top:250px;width:2px;height:70px;"></div>
+    <div class="node sub" style="left:665px;top:320px;width:230px;height:90px;"><div class="t">PostgreSQL</div><div class="s">업무 데이터</div></div>
+    <div class="node sub" style="left:925px;top:320px;width:230px;height:90px;"><div class="t">Redis</div><div class="s">세션 / 잡 상태 / 캐시</div></div>
+    <div class="line" style="left:780px;top:320px;width:230px;height:2px;"></div>
+    <div class="line" style="left:1149px;top:250px;width:2px;height:180px;"></div>
+    <div class="node sub" style="left:850px;top:450px;width:230px;height:100px;"><div class="t">YOLOv8-seg</div><div class="s">하자 탐지</div></div>
+    <div class="node sub" style="left:1105px;top:450px;width:260px;height:100px;"><div class="t">LangChain + Qwen3-8B</div><div class="s">보고서 생성</div></div>
+    <div class="node sub" style="left:1390px;top:450px;width:220px;height:100px;"><div class="t">Chroma</div><div class="s">RAG VectorDB</div></div>
+    <div class="line" style="left:965px;top:430px;width:530px;height:2px;"></div>
+    <div class="node sub" style="left:60px;top:600px;width:1570px;height:100px; text-align:left; flex-direction:row; justify-content:flex-start; gap:16px; padding:0 32px;">
+      <div style="font-size:15px; line-height:1.7; color:var(--sub);">
+        분석 요청은 비동기 잡 패턴으로 처리하고, 진행률은 Redis에 저장해 프론트에서 폴링합니다.<br>
+        FastAPI, PostgreSQL, Redis, Chroma는 외부 포트를 열지 않고 내부 통신 중심으로 구성합니다.
       </div>
     </div>
   </div>
-
   <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
   <div class="page-num">9</div>
 </div>
 </section>
-<section id="slide-07" class="deck-page">
+
+<section id="slide-10" class="deck-page">
 <div class="slide">
-  <div class="chapter-num">추가</div>
-  <div class="slide-title">메뉴 구성(IA) 트리 — P0 중심</div>
-  <div class="subtitle">§4 메뉴 구성(IA) 전체 트리 중 P0 핵심 흐름만 발췌</div>
-
-  <div class="tree">
-    <div class="root">hajaCheck (로그인 전: 랜딩 · 로그인/회원가입)</div>
-
-    <div class="node card">
-      <div class="h">📊 대시보드</div>
-      <ul>
-        <li>전체 시설물 현황</li>
-        <li>하자 등급 분포</li>
-        <li>처리 대기 현황</li>
-        <li class="p1">다음 점검일 도래 (P1)</li>
-      </ul>
+  <div class="chapter-num">08</div>
+  <div class="slide-title">IA 및 핵심 화면 흐름</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="subtitle">시설물 단위 관리에서 점검 회차, 하자 검수, 보고서 생성까지 <b style="color:var(--blue)">하나의 흐름</b>으로 연결합니다</div>
+  <div class="content-card">
+    <div class="divider"></div>
+    <div class="ia">
+      <div class="h">IA (1 depth)</div>
+      <div class="item"><span class="dot"></span>랜딩</div>
+      <div class="item"><span class="dot"></span>로그인 / 회원가입</div>
+      <div class="item"><span class="dot"></span>대시보드</div>
+      <div class="item"><span class="dot"></span>시설물 관리</div>
+      <div class="item"><span class="dot"></span><b>점검 관리 ★</b></div>
+      <div class="item"><span class="dot"></span><b>하자 관리 ★</b></div>
+      <div class="item"><span class="dot"></span>보고서</div>
+      <div class="item"><span class="dot"></span>고객지원</div>
+      <div class="item"><span class="dot"></span>마이페이지</div>
+      <div class="item"><span class="dot"></span>관리자 페이지</div>
     </div>
-    <div class="node card">
-      <div class="h">🏢 시설물 관리</div>
-      <ul>
-        <li>시설물 목록/등록</li>
-        <li>시설물 상세·이력</li>
-        <li class="p1">점검 주기 설정 (P1)</li>
-        <li class="p1">지도 뷰 (P1)</li>
-      </ul>
+    <div class="flow">
+      <div class="h">핵심 업무 흐름</div>
+      <div class="steps">
+        <span class="step">시설물 등록</span><span class="arrow">→</span>
+        <span class="step">점검 회차 생성</span><span class="arrow">→</span>
+        <span class="step">이미지·영상 업로드</span><span class="arrow">→</span>
+        <span class="step">AI 분석 실행</span><span class="arrow">→</span>
+        <span class="step">결과 뷰어 확인</span><span class="arrow">→</span>
+        <span class="step">오탐 수정·등급 조정</span><span class="arrow">→</span>
+        <span class="step">보고서 생성</span><span class="arrow">→</span>
+        <span class="step">PDF 내보내기</span><span class="arrow">→</span>
+        <span class="step">RAG Q&amp;A / 상담원 연결</span>
+      </div>
     </div>
-    <div class="node card">
-      <div class="h">🔍 점검 관리 ★</div>
-      <ul>
-        <li>점검(회차) 생성</li>
-        <li>촬영 데이터 업로드</li>
-        <li>AI 분석 실행/상태</li>
-        <li><b>분석 결과 뷰어</b> ★핵심</li>
-      </ul>
-    </div>
-    <div class="node card">
-      <div class="h">📋 하자 관리</div>
-      <ul>
-        <li>하자 목록/상세</li>
-        <li>상태머신: 신규→검수확정→조치대기→조치중→조치완료</li>
-        <li class="p1">자연어 검색 (P1)</li>
-      </ul>
-    </div>
-
-    <div class="node card">
-      <div class="h">📄 보고서</div>
-      <ul>
-        <li>보고서 목록/이력</li>
-        <li>편집·미리보기</li>
-        <li>PDF 내보내기</li>
-      </ul>
-    </div>
-    <div class="node card">
-      <div class="h">💬 고객지원</div>
-      <ul>
-        <li>AI 어시스턴트(RAG Q&A)</li>
-        <li>상담 챗봇 → 상담원 연결</li>
-        <li>내 상담 이력</li>
-      </ul>
-    </div>
-    <div class="node card">
-      <div class="h">👤 마이페이지</div>
-      <ul>
-        <li>내 정보</li>
-        <li>내 점검 이력/보고서</li>
-        <li class="p1">내 플랜 (P1)</li>
-      </ul>
-    </div>
-    <div class="node card">
-      <div class="h">🛠 관리자 페이지</div>
-      <ul>
-        <li>사용자·기준 관리</li>
-        <li>상담·RAG 문서 관리</li>
-        <li>시스템 모니터링</li>
-      </ul>
+    <div class="highlight">
+      <div class="card card"><div class="n">강조 화면 1</div><div class="t">분석 결과 뷰어</div><div class="d">원본 이미지 위 하자 오버레이, 필터, 확대, 수동 검수 제공</div></div>
+      <div class="card card"><div class="n">강조 화면 2</div><div class="t">하자 관리</div><div class="d">하자 목록·상세, 상태머신, 자연어 검색, 회차 비교</div></div>
+      <div class="card card"><div class="n">강조 화면 3</div><div class="t">보고서</div><div class="d">확정 하자 목록 기반 LLM 초안 생성, 편집, PDF 출력</div></div>
     </div>
   </div>
-
   <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
   <div class="page-num">10</div>
 </div>
 </section>
+
+<section id="slide-11" class="deck-page">
+<div class="slide">
+  <div class="chapter-num">09</div>
+  <div class="slide-title">ERD 요약</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="subtitle">시설물, 점검, 미디어, 하자, 보고서를 중심으로 <b style="color:var(--blue)">점검 이력과 검수 이력</b>을 축적합니다</div>
+  <div class="content-card">
+    <div class="divider"></div>
+    <div class="erd">
+      <div class="erow">
+        <span class="ent strong">users</span><span class="rel">owns→</span>
+        <span class="ent">facilities</span><span class="rel">has→</span>
+        <span class="ent">inspections</span><span class="rel">uploads→</span>
+        <span class="ent">media</span><span class="rel">detects→</span>
+        <span class="ent">defects</span><span class="rel">records→</span>
+        <span class="ent strong">defect_revisions</span>
+      </div>
+      <div class="erow">
+        <span class="ent">inspections</span><span class="rel">generates→</span>
+        <span class="ent">reports</span><span class="rel">←edits</span>
+        <span class="ent">users</span>
+      </div>
+      <div class="erow">
+        <span class="ent">users</span><span class="rel">starts→</span>
+        <span class="ent">chat_sessions</span><span class="rel">contains→</span>
+        <span class="ent strong">chat_messages</span><span class="rel">(citation 필수)</span>
+      </div>
+      <div class="erow">
+        <span class="ent">users</span><span class="rel">requests→</span>
+        <span class="ent">counsel_tickets</span>
+        <span class="rel" style="margin-left:24px;">users</span><span class="rel">receives→</span>
+        <span class="ent">notifications</span>
+      </div>
+      <div class="erow">
+        <span class="ent">plans</span><span class="rel">applies→</span>
+        <span class="ent">user_plans</span><span class="rel">←subscribes</span>
+        <span class="ent">users</span><span class="rel">tracks→</span>
+        <span class="ent strong">usage_counters</span>
+      </div>
+      <div class="erow"><span class="rel">기타: rag_documents — 상담·RAG 문서 관리</span></div>
+    </div>
+    <div class="principles">
+      <div>
+        <div class="h">설계 원칙</div>
+        <div class="li"><div class="n">1</div><div class="t">하자 검수 이력은 append-only로 보존합니다</div></div>
+        <div class="li"><div class="n">2</div><div class="t">RAG 답변은 출처 citation 필드를 필수로 둡니다</div></div>
+        <div class="li"><div class="n">3</div><div class="t">역할 권한과 플랜 쿼터는 분리 관리합니다</div></div>
+      </div>
+      <div class="highlight-box">
+        <div class="t">v0.41 설계 보강 포인트</div>
+        <ul>
+          <li><b>defect_revisions</b> — 검수 변경 이력 추적</li>
+          <li><b>usage_counters</b> — 플랜 쿼터 사용량 추적</li>
+          <li><b>chat_messages.citation</b> — 답변 출처 필드</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">11</div>
+</div>
+</section>
+
+<section id="slide-12" class="deck-page">
+<div class="slide">
+  <div class="chapter-num">10</div>
+  <div class="slide-title">API 명세 요약</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="content-card">
+    <div class="message">Contract-First 방식으로 API 계약을 먼저 맞추고, <b>프론트와 백엔드를 병렬 개발</b>합니다</div>
+    <div class="divider"></div>
+    <div class="rest">
+      <div class="h">핵심 REST API</div>
+      <div class="row"><span class="method post">POST</span><span class="path">/api/auth/oauth/{provider}</span></div>
+      <div class="row"><span class="method get">GET</span><span class="path">/api/facilities</span></div>
+      <div class="row strong"><span class="method post">POST</span><span class="path">/api/inspections/{id}/analysis</span></div>
+      <div class="row strong"><span class="method get">GET</span><span class="path">/api/analysis-jobs/{jobId}</span></div>
+      <div class="row"><span class="method patch">PATCH</span><span class="path">/api/defects/{id}/review</span></div>
+      <div class="row"><span class="method post">POST</span><span class="path">/api/reports</span></div>
+      <div class="row"><span class="method get">GET</span><span class="path">/api/reports/{id}/pdf</span></div>
+      <div class="row"><span class="method ws">WS</span><span class="path">/ws</span></div>
+    </div>
+    <div class="ai">
+      <div class="h">AI API (FastAPI)</div>
+      <div class="row"><div class="path">POST /ai/detect</div><div class="d">하자 탐지 요청, jobId 또는 탐지 결과 반환</div></div>
+      <div class="row"><div class="path">POST /ai/report</div><div class="d">확정 하자 목록 기반 보고서 섹션 생성</div></div>
+      <div class="row"><div class="path">POST /ai/chat</div><div class="d">점검 기준·법규 RAG Q&amp;A</div></div>
+      <div class="row"><div class="path">POST /ai/nl-search</div><div class="d">자연어 질의를 하자 필터 조건으로 변환</div></div>
+    </div>
+    <div class="resp">
+      <div class="h">공통 응답 규약</div>
+      <pre>{
+  "success": true,
+  "data": {},
+  "error": null
+}</pre>
+    </div>
+    <div class="note">OpenAPI 스펙 우선 작성 → 프론트 MSW 목서버 병렬 개발 → Swagger diff 리뷰로 계약 변경 관리</div>
+  </div>
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">12</div>
+</div>
+</section>
+
+<div class="pager">
+  <button id="pagerPrev" aria-label="이전 슬라이드">‹</button>
+  <span class="count"><span id="pagerCur">1</span> / <span id="pagerTotal">12</span></span>
+  <div class="dots" id="pagerDots"></div>
+  <button id="pagerNext" aria-label="다음 슬라이드">›</button>
+</div>
+
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.deck-page'));
+  var total = pages.length;
+  var curEl = document.getElementById('pagerCur');
+  var totalEl = document.getElementById('pagerTotal');
+  var prevBtn = document.getElementById('pagerPrev');
+  var nextBtn = document.getElementById('pagerNext');
+  var dotsWrap = document.getElementById('pagerDots');
+  totalEl.textContent = total;
+
+  var current = 0;
+
+  pages.forEach(function (page, i) {
+    var dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.title = '슬라이드 ' + (i + 1);
+    dot.addEventListener('click', function () { goTo(i); });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function update(i) {
+    current = i;
+    curEl.textContent = i + 1;
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === total - 1;
+    dots.forEach(function (d, idx) { d.classList.toggle('active', idx === i); });
+  }
+
+  function goTo(i) {
+    i = Math.max(0, Math.min(total - 1, i));
+    pages[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    update(i);
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { goTo(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { goTo(current - 1); }
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+        var idx = pages.indexOf(entry.target);
+        if (idx !== -1) update(idx);
+      }
+    });
+  }, { threshold: [0.6] });
+  pages.forEach(function (p) { observer.observe(p); });
+
+  update(0);
+})();
+</script>
+
 </body>
 </html>

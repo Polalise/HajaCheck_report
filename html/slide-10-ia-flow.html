@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  .subtitle {
+    position: absolute;
+    top: 176px;
+    left: 200px;
+    width: 1500px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--sub);
+  }
+
+  .divider {
+    position: absolute;
+    top: 60px;
+    left: 560px;
+    width: 1px;
+    height: 640px;
+    background: var(--line);
+  }
+
+  .ia {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 460px;
+    height: 640px;
+  }
+  .ia .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 18px; }
+  .ia .item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+    color: var(--body);
+  }
+  .ia .item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+  .ia .item b { font-weight: 800; color: var(--ink); }
+
+  .flow {
+    position: absolute;
+    top: 60px;
+    left: 600px;
+    width: 1030px;
+  }
+  .flow .h { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 18px; }
+  .flow .steps { display: flex; flex-wrap: wrap; gap: 12px; }
+  .flow .step {
+    background: var(--blue-light);
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 999px;
+  }
+  .flow .arrow { color: var(--blue-line); font-size: 16px; align-self: center; }
+
+  .highlight {
+    position: absolute;
+    top: 320px;
+    left: 600px;
+    width: 1030px;
+    display: flex;
+    gap: 24px;
+  }
+  .highlight .card { flex: 1; padding: 26px 28px; }
+  .highlight .card .n { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 8px; }
+  .highlight .card .t { font-size: 19px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+  .highlight .card .d { font-size: 14px; color: var(--sub); line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="chapter-num">08</div>
+  <div class="slide-title">IA 및 핵심 화면 흐름</div>
+  <div class="brand">HajaCheck <span>착수보고</span></div>
+  <div class="subtitle">시설물 단위 관리에서 점검 회차, 하자 검수, 보고서 생성까지 <b style="color:var(--blue)">하나의 흐름</b>으로 연결합니다</div>
+
+  <div class="content-card">
+    <div class="divider"></div>
+
+    <div class="ia">
+      <div class="h">IA (1 depth)</div>
+      <div class="item"><span class="dot"></span>랜딩</div>
+      <div class="item"><span class="dot"></span>로그인 / 회원가입</div>
+      <div class="item"><span class="dot"></span>대시보드</div>
+      <div class="item"><span class="dot"></span>시설물 관리</div>
+      <div class="item"><span class="dot"></span><b>점검 관리 ★</b></div>
+      <div class="item"><span class="dot"></span><b>하자 관리 ★</b></div>
+      <div class="item"><span class="dot"></span>보고서</div>
+      <div class="item"><span class="dot"></span>고객지원</div>
+      <div class="item"><span class="dot"></span>마이페이지</div>
+      <div class="item"><span class="dot"></span>관리자 페이지</div>
+    </div>
+
+    <div class="flow">
+      <div class="h">핵심 업무 흐름</div>
+      <div class="steps">
+        <span class="step">시설물 등록</span><span class="arrow">→</span>
+        <span class="step">점검 회차 생성</span><span class="arrow">→</span>
+        <span class="step">이미지·영상 업로드</span><span class="arrow">→</span>
+        <span class="step">AI 분석 실행</span><span class="arrow">→</span>
+        <span class="step">결과 뷰어 확인</span><span class="arrow">→</span>
+        <span class="step">오탐 수정·등급 조정</span><span class="arrow">→</span>
+        <span class="step">보고서 생성</span><span class="arrow">→</span>
+        <span class="step">PDF 내보내기</span><span class="arrow">→</span>
+        <span class="step">RAG Q&amp;A / 상담원 연결</span>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <div class="card card">
+        <div class="n">강조 화면 1</div>
+        <div class="t">분석 결과 뷰어</div>
+        <div class="d">원본 이미지 위 하자 오버레이, 필터, 확대, 수동 검수 제공</div>
+      </div>
+      <div class="card card">
+        <div class="n">강조 화면 2</div>
+        <div class="t">하자 관리</div>
+        <div class="d">하자 목록·상세, 상태머신, 자연어 검색, 회차 비교</div>
+      </div>
+      <div class="card card">
+        <div class="n">강조 화면 3</div>
+        <div class="t">보고서</div>
+        <div class="d">확정 하자 목록 기반 LLM 초안 생성, 편집, PDF 출력</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="page-num">10</div>
+</div>
+</body>
+</html>

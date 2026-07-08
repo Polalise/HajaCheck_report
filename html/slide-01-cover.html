@@ -4,90 +4,106 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="base.css">
 <style>
-  body { background: linear-gradient(135deg, #0f1b2d 0%, #16273f 55%, #1d3a5f 100%); }
-  .slide { background: transparent; }
+  .top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  .date-tag {
+    width: 260px;
+    height: 100px;
+    background: var(--blue);
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 999px 999px 0;
+  }
+
+  .top-title {
+    margin-left: 60px;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .brand-logo {
+    position: absolute;
+    top: 32px;
+    right: 115px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-logo img { height: 40px; width: auto; }
+  .brand-logo span {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: 1px;
+  }
 
   .wordmark {
     position: absolute;
-    top: 300px;
-    left: 150px;
+    top: 220px;
+    left: 152px;
     font-size: 96px;
     font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -1px;
+    color: var(--ink);
+    letter-spacing: -2px;
   }
-  .wordmark span { color: #38bdf8; }
 
   .subtitle {
     position: absolute;
-    top: 430px;
-    left: 152px;
-    font-size: 40px;
-    font-weight: 500;
-    color: #cbd5e1;
-  }
-
-  .report-label {
-    position: absolute;
-    top: 540px;
-    left: 152px;
+    top: 372px;
+    left: 154px;
     font-size: 30px;
-    font-weight: 700;
-    color: #38bdf8;
-    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--ink);
   }
 
   .meta {
     position: absolute;
-    bottom: 110px;
+    bottom: 96px;
     left: 152px;
-    font-size: 26px;
-    color: #94a3b8;
-    line-height: 1.8;
-  }
-  .meta b { color: #e2e8f0; }
-
-  .deco-ring {
-    position: absolute;
-    right: -180px;
-    top: -180px;
-    width: 900px;
-    height: 900px;
-    border-radius: 50%;
-    border: 2px solid rgba(56,189,248,0.25);
-  }
-  .deco-ring.small {
-    right: -60px;
-    top: 60px;
-    width: 560px;
-    height: 560px;
-    border-color: rgba(56,189,248,0.4);
-  }
-
-  .top-tag {
-    position: absolute;
-    top: 90px;
-    left: 152px;
+    right: 115px;
+    display: flex;
+    align-items: center;
     font-size: 22px;
-    font-weight: 700;
-    color: #7dd3fc;
-    letter-spacing: 6px;
+    color: var(--ink);
   }
+  .meta b { font-weight: 700; }
+  .meta .sep { margin: 0 26px; color: var(--line); }
+  .meta .rule { flex: 1; height: 1px; background: #98a2b3; margin-left: 40px; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="deco-ring"></div>
-  <div class="deco-ring small"></div>
+  <div class="top-bar">
+    <div class="date-tag">2026.07.14</div>
+    <div class="top-title">AI 기반 시설물 외관 하자 점검 플랫폼</div>
+  </div>
 
-  <div class="top-tag">HAJACHECK KICK-OFF</div>
-  <div class="wordmark">haja<span>Check</span></div>
-  <div class="subtitle">AI 기반 시설물 외관 하자 점검 플랫폼</div>
-  <div class="report-label">인공지능개발 양성과정_킥오프 보고서</div>
+  <div class="brand-logo">
+    <img src="../icon/LOGO-removebg.png" alt="HajaCheck logo">
+    <span>HAJACHECK</span>
+  </div>
+
+  <div class="wordmark">HajaCheck</div>
+  <div class="subtitle">착수보고서</div>
 
   <div class="meta">
-    <div>발표일 &nbsp;<b>2026.07.14</b></div>
-    <div>PM &nbsp;<b>김승현</b> &nbsp;·&nbsp; 팀원 &nbsp;<b>김관영·정재봉·오영석·이은석·허남·유병현·황승현</b> (총 8인)</div>
+    <span>PM &nbsp;<b>김승현</b></span>
+    <span class="sep">|</span>
+    <span>팀원 &nbsp;<b>김관영·오영석·이은석·허남·유병현·정재봉·황승현</b></span>
+    <div class="rule"></div>
   </div>
 </div>
 </body>
